@@ -1,60 +1,33 @@
-# A statically generated blog example using Next.js and Sanity
+# Social ThreatFinder (STF) Site
 
-This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Sanity](https://www.sanity.io/) as the data source.
-
-You'll get:
-
-- Next.js deployed with the [Sanity Vercel Integration][integration].
-- Sanity Studio running on localhost and deployed in the [cloud](https://www.sanity.io/docs/deployment).
-- Sub-second as-you-type previews in Next.js
-- [On-demand revalidation of pages](https://nextjs.org/blog/next-12-1#on-demand-incremental-static-regeneration-beta) with [GROQ powered webhooks](https://www.sanity.io/docs/webhooks)
+STF's frontend built using Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Sanity](https://www.sanity.io/) as the data source. Designed to be built on top of [STF's API](https://github.com/lryanle/threatfinder-api).
 
 ## Demo
 
-### [https://next-blog-sanity.vercel.app](https://next-blog-sanity.vercel.app)
+### [https://stf-site.vercel.app/](https://stf-site.vercel.app/)
 
-## Related examples
 
-- [WordPress](/examples/cms-wordpress)
-- [DatoCMS](/examples/cms-datocms)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-- [Ghost](/examples/cms-ghost)
-- [Umbraco Heartcore](/examples/cms-umbraco-heartcore)
-- [Blog Starter](/examples/blog-starter)
-- [Builder.io](/examples/cms-builder-io)
-- [DotCMS](/examples/cms-dotcms)
-- [Enterspeed](/examples/cms-enterspeed)
-
-# Configuration
+# Setup
 
 - [Step 1. Set up the environment](#step-1-set-up-the-environment)
 - [Step 2. Configure CORS for localhost](#step-2-configure-cors-for-localhost)
 - [Step 3. Run Next.js locally in development mode](#step-3-run-nextjs-locally-in-development-mode)
 - [Step 4. Populate content](#step-4-populate-content)
 - [Step 5. Deploy to production & use Preview Mode from anywhere](#step-5-deploy-to-production--use-preview-mode-from-anywhere)
-  - [If you didn't Deploy with Vercel earlier do so now](#if-you-didnt-deploy-with-vercel-earlier-do-so-now)
-  - [Configure CORS for production](#configure-cors-for-production)
-  - [Add the preview secret environment variable](#add-the-preview-secret-environment-variable)
-  - [How to test locally that the secret is setup correctly](#how-to-test-locally-that-the-secret-is-setup-correctly)
-  - [How to start Preview Mode for Next.js in production from a local Studio](#how-to-start-preview-mode-for-nextjs-in-production-from-a-local-studio)
-  - [If you regret sending a preview link to someone](#if-you-regret-sending-a-preview-link-to-someone)
+- [If you didn't Deploy with Vercel earlier do so now](#if-you-didnt-deploy-with-vercel-earlier-do-so-now)
+- [Configure CORS for production](#configure-cors-for-production)
+- [Add the preview secret environment variable](#add-the-preview-secret-environment-variable)
+- [How to test locally that the secret is setup correctly](#how-to-test-locally-that-the-secret-is-setup-correctly)
+- [How to start Preview Mode for Next.js in production from a local Studio](#how-to-start-preview-mode-for-nextjs-in-production-from-a-local-studio)
+- [If you regret sending a preview link to someone](#if-you-regret-sending-a-preview-link-to-someone)
 - [Step 6. Deploy your Studio and publish from anywhere](#step-6-deploy-your-studio-and-publish-from-anywhere)
 - [Step 7. Setup Revalidation Webhook](#step-7-setup-revalidation-webhook)
-  - [Testing the Webhook](#testing-the-webhook)
+- [Testing the Webhook](#testing-the-webhook)
 - [Next steps](#next-steps)
 
 ## Step 1. Set up the environment
 
-Use the Deploy Button below, you'll deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) as well as connect it to your Sanity dataset using [the Sanity Vercel Integration][integration].
+Use the Deploy Button below, you'll deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) as well as connect it to your Sanity dataset using [the Sanity Vercel Integration][integration]. **This will publish and integrate a local example using vercel (developers of Next.js)**
 
 [![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
@@ -150,12 +123,12 @@ npm --prefix studio run cors:add -- http://localhost:3000 --credentials
 ```bash
 npm install && npm run dev
 ```
-
+or
 ```bash
 yarn install && yarn dev
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
+The site should be up and running on [http://localhost:3000](http://localhost:3000).
 
 ## Step 4. Populate content
 
@@ -390,12 +363,7 @@ Wormhole into the [manager](https://manage.sanity.io/) by running:
 - The log should start showing calls.
 - And the published changes show up on the site after you reload.
 
-## Next steps
-
-- Mount your preview inside the Sanity Studio for comfortable side-by-side editing
-- [Join the Sanity community](https://slack.sanity.io/)
-
-[vercel-deploy]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fcms-sanity&repository-name=cms-sanity&project-name=cms-sanity&demo-title=Blog%20using%20Next.js%20%26%20Sanity&demo-description=On-demand%20ISR%2C%20sub-second%20as-you-type%20previews&demo-url=https%3A%2F%2Fnext-blog-sanity.vercel.app%2F&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F110497645%2F182727236-75c02b1b-faed-4ae2-99ce-baa089f7f363.png&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx
+[vercel-deploy]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flryanle%2Fstf-site&repository-name=stf-site&project-name=stf-site&demo-title=Social%20ThreatFinder%20Site&demo-description=Live%20STF%20site%20deployed%20with%20a%20phishing%20dashboard%20and%20interface&demo-url=https%3A%2F%2Fstf-site.vercel.app%2F&integration-ids=oac_hb2LITYajhRQ0i4QznmKH7gx
 [integration]: https://www.sanity.io/docs/vercel-integration
 [`sanity.json`]: studio/sanity.json
 [`.env.local.example`]: .env.local.example
