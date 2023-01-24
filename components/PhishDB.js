@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from 'react-toastify';
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, useSortBy, usePagination } from 'react-table'
-// import heroicons npm package
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
 import { Button, PageButton } from './icons/Buttons'
 import { classNames } from './icons/Utils'
@@ -73,17 +72,18 @@ export function SelectColumnFilter({
     )
 }
 
-export function StatusPill({ value }) {
-    const status = value ? value.toLowerCase() : "unknown";
+export function StatusPill({ urlAlive }) {
+    const status = urlAlive ? urlAlive : "unknown";
+    console.log("status: " + urlAlive)
 
     return (
         <span
             className={
                 classNames(
                     "px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm",
-                    status.startsWith("active") ? "bg-green-100 text-green-800" : null,
-                    status.startsWith("inactive") ? "bg-yellow-100 text-red-800" : null,
-                    status.startsWith("undefined") ? "bg-red-100 text-yellow-800" : null,
+                    status.startsWith("1") ? "bg-green-100 text-green-800" : null,
+                    status.startsWith("0") ? "bg-yellow-100 text-red-800" : null,
+                    status.startsWith("9") ? "bg-red-100 text-yellow-800" : null,
                 )
             }
         >
@@ -123,7 +123,6 @@ function PhishDB() {
         axios
             .get("http://localhost:8022/api/fetch?start=0&amount=200")
             .then((res) => {
-                console.log(res.data.message);
                 setPhishList(res.data.message);
                 // setLoading(false);
             })
@@ -161,7 +160,7 @@ function PhishDB() {
         {
             Header: "Status",
             accessor: 'urlAlive',
-            // Cell: StatusPill,
+            Cell: StatusPill,
         },
         {
             Header: "Target",
