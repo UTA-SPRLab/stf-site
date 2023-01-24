@@ -24,7 +24,7 @@ Then link your clone to Vercel:
 npx vercel link
 ```
 
-Download the environment variables needed to connect Next.js and Studio to your Sanity project:
+Download necessary materials (usually env variables) needed to connect Next.js:
 
 ```bash
 npx vercel env pull

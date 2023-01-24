@@ -7,15 +7,15 @@ export default function Contact() {
   return (
     <div className="text-black">
       <NextSeo
-        title="404: nine4"
+        title="404: Social Threat Finder"
         description="404 page for all our missing pages"
-        canonical="https://nine4-2.vercel.app/404"
+        canonical="https://stf-site.vercel.app/404"
         openGraph={{
-          url: "https://nine4-2.vercel.app/404",
+          url: "https://stf-site.vercel.app/404",
         }}
       />
       <Head>
-        <title>nine4</title>
+        <title>Social Threat Finder</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
