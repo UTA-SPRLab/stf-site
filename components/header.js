@@ -70,7 +70,7 @@ export default function Header() {
 									About Us
 								</a>
 							</li>
-							<li>
+							<li className="mr-4">
 								<a
 									className="inline-flex items-center px-4 py-2 font-medium text-gray-100 transition duration-150 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 md:ml-4 bg-blue-500 hover:bg-blue-600"
 									href="/"

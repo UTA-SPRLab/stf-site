@@ -55,3 +55,8 @@ a {
   -webkit-filter: none;
   transition: 0.4s;
 }
+
+td:nth-child(2) {
+  text-align: left;
+  min-width: 20rem;
+}

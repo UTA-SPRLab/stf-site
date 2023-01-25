@@ -28,11 +28,13 @@ export default function Main() {
 					></img>
 				</div>
 			</div>
-			<div className="flex flex-col items-center text-left lg:text-center m-10">
+			<div className="flex flex-col items-center text-left lg:text-center m-10 max-w-full">
 				<h1 className="text-3xl Avenir font-semibold text-black tracking-wide text-center" id="partners">
 					STF Phishing Database
 				</h1>
-				<PhishDB className="text-left" />
+			</div>
+			<div className="max-w-7xl mx-10 sm:mx-auto">
+				<PhishDB/>
 			</div>
 			<section className="mx-auto">
 				<div className="container px-5 mx-auto lg:px-24 ">
