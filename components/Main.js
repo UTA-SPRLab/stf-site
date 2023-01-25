@@ -28,7 +28,12 @@ export default function Main() {
 					></img>
 				</div>
 			</div>
-			<PhishDB />
+			<div className="flex flex-col items-center text-left lg:text-center m-10">
+				<h1 className="text-3xl Avenir font-semibold text-black tracking-wide text-center" id="partners">
+					STF Phishing Database
+				</h1>
+				<PhishDB className="text-left" />
+			</div>
 			<section className="mx-auto">
 				<div className="container px-5 mx-auto lg:px-24 ">
 					<div className="flex flex-col items-center w-full mb-4 text-left lg:text-center">
@@ -37,21 +42,21 @@ export default function Main() {
 						</h1>
 					</div>
 					<div className="flex justify-evenly items-center gap-8 mb-16 text-center">
-						<div className="flex items-center justify-center">
+						<div className="flex items-center justify-cente w-32">
 							<img
 								src="/images/Comcast-Logo.png"
 								alt="Shopify Logo"
 								className="block object-contain h-16 greyC"
 							></img>
 						</div>
-						<div className="flex items-center justify-center">
+						<div className="flex items-center justify-center w-32">
 							<img
 								src="/images/UTA-CSE-Logo.png"
 								alt="Google Logo"
 								className="block object-contain h-16 greyC"
 							></img>
 						</div>
-						<div className="flex items-center justify-center">
+						<div className="flex items-center justify-center w-32">
 							<img
 								src="/images/SPRL-UTA-Logo.png"
 								alt="Cloudflare Logo"

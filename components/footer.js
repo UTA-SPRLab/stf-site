@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="pb-4">
-      <div className="max-w-6xl xl:max-w-6xl mx-auto divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
         <ul className="Footer_nav__2rFid text-xl font-medium sm:pb-20 flex justify-evenly gap-3 mb-5 md:mb-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
           <li className="space-y-5 row-span-2">
             <h2 className="text-xl tracking-wide text-gray-900 uppercase font-bold">

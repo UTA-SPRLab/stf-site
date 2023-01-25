@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "regenerator-runtime" 
 import { toast } from 'react-toastify';
 import { useTable, useFilters, useGlobalFilter, useAsyncDebounce, useSortBy, usePagination } from 'react-table'
 import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon, ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
@@ -14,9 +15,9 @@ function GlobalFilter({
 }) {
     const count = preGlobalFilteredRows.length
     const [value, setValue] = React.useState(globalFilter)
-    // const onChange = useAsyncDebounce(value => {
-    //     setGlobalFilter(value || undefined)
-    // }, 200)
+    const onChange = useAsyncDebounce(value => {
+        setGlobalFilter(value || undefined)
+    }, 200)
 
     return (
         <label className="flex gap-x-2 items-baseline">
@@ -72,18 +73,29 @@ export function SelectColumnFilter({
     )
 }
 
-export function StatusPill({ urlAlive }) {
-    const status = urlAlive ? urlAlive : "unknown";
-    console.log("status: " + urlAlive)
+export function StatusPill({ value }) {
+    let status = "undefined";
+    switch (value) {
+        case 0:
+            status = "offline";
+            break;
+        case 1:
+            status = "online";
+            break;
+        case 999:
+            status = "unknown";
+            break;
+    }
 
     return (
         <span
             className={
                 classNames(
                     "px-3 py-1 uppercase leading-wide font-bold text-xs rounded-full shadow-sm",
-                    status.startsWith("1") ? "bg-green-100 text-green-800" : null,
-                    status.startsWith("0") ? "bg-yellow-100 text-red-800" : null,
-                    status.startsWith("9") ? "bg-red-100 text-yellow-800" : null,
+                    status.includes("offline") ? "bg-red-100 text-red-800" : null,
+                    status.includes("online") ? "bg-green-100 text-green-800" : null,
+                    status.includes("unknown") ? "bg-yellow-100 text-yellow-800" : null,
+                    status.includes("undefined") ? "bg-gray-100 text-gray-800" : null
                 )
             }
         >
@@ -139,7 +151,7 @@ function PhishDB() {
                 });
             });
     }, []);
-    
+
     const data = React.useMemo(() => phishList, [phishList]);
 
     const columns = React.useMemo(() => [
@@ -170,7 +182,7 @@ function PhishDB() {
             Filter: SelectColumnFilter,  // new
             filter: 'includes',
         },
-    ], []);    
+    ], []);
 
     const {
         getTableProps,
@@ -236,10 +248,10 @@ function PhishDB() {
                                                 // we can add them into the header props
                                                 <th
                                                     scope="col"
-                                                    className="group px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                                    className="group px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
                                                     {...column.getHeaderProps(column.getSortByToggleProps())}
                                                 >
-                                                    <div className="flex items-center justify-between">
+                                                    <div className="flex items-center justify-between text-center">
                                                         {column.render('Header')}
                                                         {/* Add a sort direction indicator */}
                                                         <span>
@@ -269,7 +281,7 @@ function PhishDB() {
                                                     return (
                                                         <td
                                                             {...cell.getCellProps()}
-                                                            className="px-6 py-4 whitespace-nowrap"
+                                                            className="py-4 max-w-lg"
                                                             role="cell"
                                                         >
                                                             {cell.column.Cell.name === "defaultRenderer"
