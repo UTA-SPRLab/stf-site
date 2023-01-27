@@ -1,6 +1,13 @@
+import React from "react";
 import PhishDB from "../components/PhishDB";
+import dynamic from 'next/dynamic'
 
 export default function Main() {
+	const PhishMap = dynamic(() => import("../components/PhishMap"), {
+		loading: () => <p>PhishMap is loading</p>,
+		ssr: false
+	});
+
 	return (
 		<section className="text-gray-600 body-font">
 			<div className="max-w-7xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -34,7 +41,15 @@ export default function Main() {
 				</h1>
 			</div>
 			<div className="max-w-7xl mx-10 sm:mx-auto">
-				<PhishDB/>
+				<PhishDB />
+			</div>
+			<div className="flex flex-col items-center text-left lg:text-center m-10 max-w-full">
+				<h1 className="text-3xl Avenir font-semibold text-black tracking-wide text-center" id="partners">
+					Phishing Map Visualization
+				</h1>
+			</div>
+			<div className="max-w-7xl mx-10 mb-10 sm:mx-auto map">
+				<PhishMap id={"map"} className={"map"} />
 			</div>
 			<section className="mx-auto">
 				<div className="container px-5 mx-auto lg:px-24 ">
