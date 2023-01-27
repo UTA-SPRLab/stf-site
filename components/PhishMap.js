@@ -22,7 +22,7 @@ import '@changey/react-leaflet-markercluster/dist/styles.min.css';
 let LeafIcon = L.Icon.extend({
 });
 
-let active = new LeafIcon({
+const active = new LeafIcon({
 	iconUrl: './icons/pinGreen.png',
 	shadowUrl: './icons/pinShadow.png',
 	options: {
@@ -34,7 +34,7 @@ let active = new LeafIcon({
 	}
 })
 
-let unknown = new LeafIcon({
+const unknown = new LeafIcon({
 	iconUrl: './icons/pinOrange.png',
 	shadowUrl: './icons/pinShadow.png',
 
@@ -47,7 +47,7 @@ let unknown = new LeafIcon({
 	}
 })
 
-let inactive = new LeafIcon({
+const inactive = new LeafIcon({
 	iconUrl: './icons/pinRed.png',
 	shadowUrl: './icons/pinShadow.png',
 
