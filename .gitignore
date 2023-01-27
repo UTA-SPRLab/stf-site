@@ -43,3 +43,4 @@ studio/.env.development
 studio/
 .dccache
 .dccache
+.vercel
