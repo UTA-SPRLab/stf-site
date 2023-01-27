@@ -18,12 +18,24 @@ export default function Main() {
 					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg">
 						ThreatFinder is a real-time community sourced anti-scam blocklist focused towards reliability and explanibility of emerging attacks which target both regular and decentralized ecosysem
 					</p>
-					<div className="flex justify-center">
+					<div className="flex justify-center gap-5">
 						<a
 							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
 							href="/pages/About.js"
 						>
-							<span className="justify-center">Find out more</span>
+							<span className="justify-center">Phishing DB</span>
+						</a>
+						<a
+							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
+							href="/pages/About.js"
+						>
+							<span className="justify-center">Threat Map</span>
+						</a>
+						<a
+							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
+							href="/pages/About.js"
+						>
+							<span className="justify-center">Scam Reports</span>
 						</a>
 					</div>
 				</div>

@@ -59,7 +59,7 @@ export default function Header() {
 									href="/"
 									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
-									Documentation
+									API & Feed
 								</a>
 							</li>
 							<li>

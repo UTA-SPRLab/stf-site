@@ -41,7 +41,7 @@ const unknown = new LeafIcon({
 	options: {
 		iconSize: [26, 45],
 		shadowSize: [42, 29],
-		iconAnchor: [13, 44],
+		iconAnchor: [13, 44],	
 		shadowAnchor: [4, 26],
 		popupAnchor: [0, -31]
 	}
