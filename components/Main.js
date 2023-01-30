@@ -1,12 +1,6 @@
 import React from "react";
-import PhishDB from "../components/PhishDB";
-import dynamic from 'next/dynamic'
 
 export default function Main() {
-	const PhishMap = dynamic(() => import("../components/PhishMap"), {
-		loading: () => <p>PhishMap is loading</p>,
-		ssr: false
-	});
 
 	return (
 		<section className="text-gray-600 body-font">
