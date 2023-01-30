@@ -21,19 +21,19 @@ export default function Main() {
 					<div className="flex justify-center gap-5">
 						<a
 							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="/pages/About.js"
+							href="/db"
 						>
 							<span className="justify-center">Phishing DB</span>
 						</a>
 						<a
 							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="/pages/About.js"
+							href="map"
 						>
 							<span className="justify-center">Threat Map</span>
 						</a>
 						<a
 							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="/pages/About.js"
+							href="reports"
 						>
 							<span className="justify-center">Scam Reports</span>
 						</a>
@@ -46,22 +46,6 @@ export default function Main() {
 						src="/images/iPhone-12-Mockup.png"
 					></img>
 				</div>
-			</div>
-			<div className="flex flex-col items-center text-left lg:text-center m-10 max-w-full">
-				<h1 className="text-3xl Avenir font-semibold text-black tracking-wide text-center" id="partners">
-					STF Phishing Database
-				</h1>
-			</div>
-			<div className="max-w-7xl mx-10 sm:mx-auto">
-				<PhishDB />
-			</div>
-			<div className="flex flex-col items-center text-left lg:text-center m-10 max-w-full">
-				<h1 className="text-3xl Avenir font-semibold text-black tracking-wide text-center" id="partners">
-					Phishing Map Visualization
-				</h1>
-			</div>
-			<div className="max-w-7xl mx-10 mb-10 sm:mx-auto map">
-				<PhishMap id={"map"} className={"map"} />
 			</div>
 			<section className="mx-auto">
 				<div className="container px-5 mx-auto lg:px-24 ">
