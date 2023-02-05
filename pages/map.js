@@ -25,12 +25,12 @@ export default function Map() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="flex flex-col justify-center mx-auto mt-64 text-center max-w-2x1">
+      <div className="flex flex-col justify-center items-center mx-auto mt-64 text-center max-w-2x1">
         <h1 className="text-3xl Avenir font-bold tracking-tight text-black md:text-5xl ">
           STF Phishing Map
         </h1>
         <br />
-        <div className="max-w-7xl mx-10">
+        <div className="max-w-7xl mx-10 w-full">
           <PhishMap />
         </div>
         <br />

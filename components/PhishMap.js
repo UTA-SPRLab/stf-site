@@ -1,17 +1,41 @@
 import React, { useState, useEffect } from "react";
-import L from 'leaflet'
+import L from "leaflet";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import MarkerCluster from '@changey/react-leaflet-markercluster';
+import MarkerCluster from "@changey/react-leaflet-markercluster";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
-import 'leaflet/dist/leaflet.css';
-import '@changey/react-leaflet-markercluster/dist/styles.min.css';
+import "leaflet/dist/leaflet.css";
+import "@changey/react-leaflet-markercluster/dist/styles.min.css";
+import Image from "next/image";
 
 // let clusterGroup = new L.MarkerClusterGroup();
 // let statusActive = L.featureGroup.subGroup(clusterGroup);
 // let statusInactive = L.featureGroup.subGroup(clusterGroup);
 // let statusUnknown = L.featureGroup.subGroup(clusterGroup);
+
+import pinShadow from "../public/icons/pinShadow.png";
+const pinGreen = "../public/icons/pinGreen.png";
+
+async () => {
+//   await import(`${pinShadow}`);
+  await import(`${pinGreen}`);
+};
+
+const LeafIcon = L.Icon.extend({
+  shadowUrl: pinShadow,
+  options: {
+    iconSize: [26, 45],
+    shadowSize: [42, 29],
+    iconAnchor: [13, 44],
+    shadowAnchor: [4, 26],
+    popupAnchor: [0, -31],
+  },
+});
+
+const active = new LeafIcon({
+  iconUrl: pinGreen,
+});
 
 // let overlays = {
 //     'Active': statusActive,
@@ -19,46 +43,31 @@ import '@changey/react-leaflet-markercluster/dist/styles.min.css';
 //     'Unknown': statusUnknown
 // };
 
-let LeafIcon = L.Icon.extend({
-});
+// const unknown = new LeafIcon({
+// 	iconUrl: '../icons/pinOrange.png',
+// 	shadowUrl: '../icons/pinShadow.png',
 
-const active = new LeafIcon({
-	iconUrl: './icons/pinGreen.png',
-	shadowUrl: './icons/pinShadow.png',
-	options: {
-		iconSize: [26, 45],
-		shadowSize: [42, 29],
-		iconAnchor: [13, 44],
-		shadowAnchor: [4, 26],
-		popupAnchor: [0, -31]
-	}
-})
+// 	options: {
+// 		iconSize: [26, 45],
+// 		shadowSize: [42, 29],
+// 		iconAnchor: [13, 44],
+// 		shadowAnchor: [4, 26],
+// 		popupAnchor: [0, -31]
+// 	}
+// })
 
-const unknown = new LeafIcon({
-	iconUrl: './icons/pinOrange.png',
-	shadowUrl: './icons/pinShadow.png',
+// const inactive = new LeafIcon({
+// 	iconUrl: '../icons/pinRed.png',
+// 	shadowUrl: '../icons/pinShadow.png',
 
-	options: {
-		iconSize: [26, 45],
-		shadowSize: [42, 29],
-		iconAnchor: [13, 44],	
-		shadowAnchor: [4, 26],
-		popupAnchor: [0, -31]
-	}
-})
-
-const inactive = new LeafIcon({
-	iconUrl: './icons/pinRed.png',
-	shadowUrl: './icons/pinShadow.png',
-
-	options: {
-		iconSize: [26, 45],
-		shadowSize: [42, 29],
-		iconAnchor: [13, 44],
-		shadowAnchor: [4, 26],
-		popupAnchor: [0, -31]
-	}
-})
+// 	options: {
+// 		iconSize: [26, 45],
+// 		shadowSize: [42, 29],
+// 		iconAnchor: [13, 44],
+// 		shadowAnchor: [4, 26],
+// 		popupAnchor: [0, -31]
+// 	}
+// })
 
 // let layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
@@ -78,7 +87,7 @@ const inactive = new LeafIcon({
 // 	iconUrl: redFilledMarker,
 // 	iconSize: [40, 40],
 // 	iconAnchor: [20, 40],
-// });	
+// });
 
 // const LeafIcon = L.Icon.extend({
 // 	options: {
@@ -132,38 +141,40 @@ const inactive = new LeafIcon({
 // })
 
 const PhishMap = () => {
-	const [map, setMap] = useState(null);
+  const [map, setMap] = useState(null);
 
-	useEffect(() => {
-		if (map) {
-			setInterval(function () {
-				map.invalidateSize();
-			}, 100);
-		}
-	}, [map]);
+  useEffect(() => {
+    if (map) {
+      setInterval(function () {
+        map.invalidateSize();
+      }, 100);
+    }
+  }, [map]);
 
-	return (
-		<MapContainer
-			center={[40, -100]}
-			zoom={4}
-			scrollWheelZoom={false}
-			style={{ height: "30rem", width: "100%" }}
-			whenCreated={setMap}
-			attributionControl={false}
-		// layers={[activePin, unknownPin, inactivePin]}
-		>
-			<TileLayer
-				// url={`https://api.mapbox.com/styles/v1/lryanle/clddixr9y002o01qnr8o80m5s/wmts?access_token=pk.eyJ1IjoibHJ5YW5sZSIsImEiOiJjbDFyZXkxYXAxd25iM2xtbWpqbXloc25oIn0.m1YP7rRX94XJ8cUkzovOwA`}
-				url={`https://api.mapbox.com/styles/v1/mapbox/light-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHJ5YW5sZSIsImEiOiJjbDFyZXkxYXAxd25iM2xtbWpqbXloc25oIn0.m1YP7rRX94XJ8cUkzovOwA`}
-				attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=& quot; https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
-			/>
-			<MarkerCluster>
-				<Marker position={[52.2297, 21.0122]} icon={"active"} />
-				<Marker position={[52.2297, 21.0122]} icon={"unknown"} />
-				<Marker position={[52.2297, 21.0122]} icon={"inactive"} />
-			</MarkerCluster>
-		</MapContainer >
-	);
+  return (
+    <MapContainer
+      center={[40, -100]}
+      zoom={4}
+      scrollWheelZoom={false}
+      style={{ height: "30rem", width: "100%" }}
+      whenCreated={setMap}
+      attributionControl={false}
+      // layers={[activePin, unknownPin, inactivePin]}
+    >
+      <TileLayer
+        // url={`https://api.mapbox.com/styles/v1/lryanle/clddixr9y002o01qnr8o80m5s/wmts?access_token=pk.eyJ1IjoibHJ5YW5sZSIsImEiOiJjbDFyZXkxYXAxd25iM2xtbWpqbXloc25oIn0.m1YP7rRX94XJ8cUkzovOwA`}
+        url={`https://api.mapbox.com/styles/v1/mapbox/light-v11/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHJ5YW5sZSIsImEiOiJjbDFyZXkxYXAxd25iM2xtbWpqbXloc25oIn0.m1YP7rRX94XJ8cUkzovOwA`}
+        attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href=& quot; https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+      />
+      {/* <MarkerCluster> */}
+        <Marker position={[52.2297, 21.0122]} icon={"active"} />
+        {/* <Marker position={[52.2297, 21.0122]} icon={"unknown"} />
+				<Marker position={[52.2297, 21.0122]} icon={"inactive"} /> */}
+        <Marker position={[52.2297, 21.0122]} icon={active} />
+        <Marker position={[52.2297, 21.0122]} />
+      {/* </MarkerCluster> */}
+    </MapContainer>
+  );
 };
 
-export default PhishMap
+export default PhishMap;
