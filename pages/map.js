@@ -2,13 +2,14 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
+import iframe from "react-iframe";
 
 export default function Map() {
-	const PhishMap = dynamic(() => import("../components/PhishMap"), {
-		loading: () => <p>PhishMap is loading</p>,
-		ssr: false
-	});
+  const PhishMap = dynamic(() => import("../components/PhishMap"), {
+    loading: () => <p>PhishMap is loading</p>,
+    ssr: false,
+  });
 
   return (
     <div className="text-black">
@@ -30,8 +31,13 @@ export default function Map() {
           STF Phishing Map
         </h1>
         <br />
-        <div className="max-w-7xl mx-10 w-full">
-          <PhishMap />
+        <div className="max-w-7xl mx-10 w-full flex justify-center items-center">
+          {/* <PhishMap /> */}
+          <iframe
+            url="https://lryanle.com/threatfinderjs/map"
+            width="640px"
+            height="320px"
+          />
         </div>
         <br />
         <a

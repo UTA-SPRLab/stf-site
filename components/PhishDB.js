@@ -8,6 +8,8 @@ import { Button, PageButton } from './icons/Buttons'
 import { classNames } from './icons/Utils'
 import { SortIcon, SortUpIcon, SortDownIcon } from './icons/Icons'
 
+// get server side props to fetch data
+
 function GlobalFilter({
     preGlobalFilteredRows,
     globalFilter,
@@ -140,7 +142,7 @@ function PhishDB() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8022/api/fetch?start=0&amount=200")
+            .get("http://localhost:8022/api/fetch/phish?start=0&amount=200")
             .then((res) => {
                 setPhishList(res.data.message);
                 // setLoading(false);
