@@ -12,7 +12,7 @@ export default function Header() {
 
 	return (
 		<div
-			className={`fixed top-0 w-full z-[10000] clearNav md:bg-opacity-90 duration-300 ease-in-out transition-all ${
+			className={`fixed transition-all top-0 w-full z-[10000] clearNav md:bg-opacity-90 duration-300 ease-in-out transition-all ${
 				scrollActive ? " shadow-md pt-0" : " pt-4"
 			}`}
 		>
@@ -27,7 +27,7 @@ export default function Header() {
 						</h1>
 					</a>
 					<button
-						className="text-white cursor-pointer leading-none px-3 py-1 lg:hidden outline-none focus:outline-none "
+						className="text-white cursor-pointer leading-none px-3 py-1 lg:hidden outline-none focus:outline-none transition-all "
 						type="button"
 						aria-label="button"
 						onClick={() => setNavbarOpen(!navbarOpen)}

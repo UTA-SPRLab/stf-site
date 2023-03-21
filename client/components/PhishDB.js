@@ -34,7 +34,7 @@ function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) 
 			<span className="text-gray-700">Search: </span>
 			<input
 				type="text"
-				className="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+				className="rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
 				value={value || ""}
 				onChange={(e) => {
 					setValue(e.target.value);
@@ -64,7 +64,7 @@ export function SelectColumnFilter({
 		<label className="flex gap-x-2 items-baseline">
 			<span className="text-gray-700">{render("Header")}: </span>
 			<select
-				className="rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+				className="rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
 				name={id}
 				id={id}
 				value={filterValue}
@@ -115,38 +115,37 @@ export function StatusPill({ value }) {
 export function IconCell({ value, column, row }) {
 	return (
 		<div className="flex items-center">
-			<div className="flex-shrink-0 h-36 w-64">
+			<div className="flex-shrink-0 h-8 w-8">
 				<img
-					className="h-full w-full rounded-lg"
-					src={String(value).toLowerCase()}
+					className="h-8 w-8 rounded-lg"
+					src={`./icons/${String(value).toLowerCase()}.png`}
 					alt=""
 				/>
 			</div>
+			<div className="ml-4">
+				<div className="text-sm font-medium text-gray-900">
+					{value.charAt(0).toUpperCase() + value.slice(1)}
+				</div>
+			</div>
 		</div>
 	);
 }
 
-export function BodyCell({ value, column, row }) {
-    const getFlagEmoji = countryCode => String(countryCode) != "undefined" ? String.fromCodePoint(...[...countryCode.toUpperCase()].map(x=>0x1f1a5+x.charCodeAt())) : ""
+export function DualCell({ value, column, row }) {
+	let preFormVal = String(row.original[column.locationAccessor]);
+	let formattedValue = preFormVal.charAt(0).toUpperCase() + preFormVal.slice(1);
 
 	return (
-		<div className="flex flex-col flex-nowrap justify-between content-around gap-14">
-			{/* <div className="text-sm font-medium text-gray-900">{value}</div>
-			<div className="text-sm text-gray-500">{formattedValue}</div> */}
-			<div className="flex flex-row flex-nowrap justify-between items-start gap-4">
-				<div>{String(row.original.report_summary)}</div>
-				<div className="text-3xl border rounded"> {String(getFlagEmoji(row.original.report_country))} </div>
-			</div>
-			<div className="flex flex-row flex-nowrap justify-between items-end">
-				<img className="h-8 w-8 rounded-lg" src={`./icons/${String(row.original.report_source).toLowerCase()}.png`} />
-				<div>{String(row.original.report_category)}</div>
-				<div>{String(row.original.report_trust)}</div>
+		<div className="flex items-center">
+			<div>
+				<div className="text-sm font-medium text-gray-900">{value}</div>
+				<div className="text-sm text-gray-500">{formattedValue}</div>
 			</div>
 		</div>
 	);
 }
 
-function ReportsDB() {
+function PhishDB() {
 	// Use the state and functions returned from useTable to build your UI
 
 	const [phishList, setPhishList] = useState([
@@ -161,9 +160,10 @@ function ReportsDB() {
 		},
 	]);
 	// const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		axios
-			.get("http://localhost:8022/api/fetch/reports?start=0&amount=200")
+			.get("http://localhost:8022/api/fetch/phish?start=0&amount=200")
 			.then((res) => {
 				setPhishList(res.data.message);
 				// setLoading(false);
@@ -187,22 +187,30 @@ function ReportsDB() {
 	const columns = React.useMemo(
 		() => [
 			{
-				Header: "IMG",
-				accessor: "report_image",
-				Cell: IconCell,
+				Header: "ID",
+				accessor: "id",
 			},
 			{
-				Header: "BODY",
-				accessor: "report_summary",
-				username: "report_user_name",
-				location: "report_location",
-				source: "report_source",
-				category: "report_category",
-				discovered: "report_discovered",
-                trust: "report_trust",
-				url: "report_url",
-                flag: "report_country",
-				Cell: BodyCell,
+				Header: "URL",
+				accessor: "url",
+			},
+			{
+				Header: "IP Address",
+				accessor: "ipAddress",
+				Cell: DualCell,
+				locationAccessor: "location",
+			},
+			{
+				Header: "Status",
+				accessor: "urlAlive",
+				Cell: StatusPill,
+			},
+			{
+				Header: "Target",
+				accessor: "target",
+				Cell: IconCell,
+				Filter: SelectColumnFilter, // new
+				filter: "includes",
 			},
 		],
 		[]
@@ -268,7 +276,37 @@ function ReportsDB() {
 								className="min-w-full divide-y divide-gray-200"
 							>
 								<thead className="bg-gray-50">
-									<></>
+									{headerGroups.map((headerGroup) => (
+										<tr {...headerGroup.getHeaderGroupProps()}>
+											{headerGroup.headers.map((column) => (
+												// Add the sorting props to control sorting. For this example
+												// we can add them into the header props
+												<th
+													scope="col"
+													className="group px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+													{...column.getHeaderProps(
+														column.getSortByToggleProps()
+													)}
+												>
+													<div className="flex items-center justify-between">
+														{column.render("Header")}
+														{/* Add a sort direction indicator */}
+														<span>
+															{column.isSorted ? (
+																column.isSortedDesc ? (
+																	<SortDownIcon className="w-4 h-4 text-gray-400" />
+																) : (
+																	<SortUpIcon className="w-4 h-4 text-gray-400" />
+																)
+															) : (
+																<SortIcon className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100" />
+															)}
+														</span>
+													</div>
+												</th>
+											))}
+										</tr>
+									))}
 								</thead>
 								<tbody
 									{...getTableBodyProps()}
@@ -283,7 +321,7 @@ function ReportsDB() {
 													return (
 														<td
 															{...cell.getCellProps()}
-															className="px-6 py-4"
+															className="px-6 py-4 max-w-lg"
 															role="cell"
 														>
 															{cell.column.Cell.name ===
@@ -325,7 +363,7 @@ function ReportsDB() {
 						<label>
 							<span className="sr-only">Items Per Page</span>
 							<select
-								className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+								className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
 								value={state.pageSize}
 								onChange={(e) => {
 									setPageSize(Number(e.target.value));
@@ -388,4 +426,4 @@ function ReportsDB() {
 	);
 }
 
-export default ReportsDB;
+export default PhishDB;

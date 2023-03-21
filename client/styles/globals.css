@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background-color: white;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.g327 {
+	border-color: #302f30;
+}
+
+@font-face {
+	font-family: "AvenirNextW10-Bold";
+	src: url("../public/fonts/AvenirNext.ttf");
+}
+
+.Avenir {
+	font-family: AvenirNextW10-Bold;
+	font-display: swap;
+}
+
+.clearNav {
+	backdrop-filter: saturate(180%) blur(5px) !important;
+	background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.grr {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.greyC {
+	filter: gray;
+	-webkit-filter: grayscale(100%);
+	transition: 0.4s;
+}
+
+.greyC:hover {
+	filter: none;
+	-webkit-filter: none;
+	transition: 0.4s;
+}
+
+td:nth-child(2) {
+	text-align: left;
+	min-width: 20rem;
+}
+
+@layer base {
+	.font-outline-2 {
+		text-shadow: 0 0 1px white;
+	}
+	.font-outline-4 {
+		-webkit-text-stroke: 4px white;
+	}
+
+	.enabled {
+		color: white;
+		background-color: #3482F6 !important;
+	}
+
+	.disabled {
+		color: black;
+		background-color: #f3f4f6 !important;
+	}
+
+	.confidence-0 {
+		color: white;
+		background-color: "#77b255";
+	}
+	.confidence-1 {
+		color: white;
+		background-color: "#93b545";
+	}
+	.confidence-2 {
+		color: white;
+		background-color: "#aeb734";
+	}
+	.confidence-3 {
+		color: white;
+		background-color: "#c9ba23";
+	}
+	.confidence-4 {
+		color: white;
+		background-color: "#e4bd12";
+	}
+	.confidence-5 {
+		color: white;
+		background-color: "#ffc001";
+	}
+	.confidence-6 {
+		color: white;
+		background-color: "#fca914";
+	}
+	.confidence-7 {
+		color: white;
+		background-color: "#f89126";
+	}
+	.confidence-8 {
+		color: white;
+		background-color: "#f57a38";
+	}
+	.confidence-9 {
+		color: white;
+		background-color: "#f1634a";
+	}
+	.confidence-10 {
+		color: white;
+		background-color: "#ed4c5c";
+	}
+}

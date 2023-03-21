@@ -1,13 +1,28 @@
 # Social ThreatFinder (STF) Site
 
-STF's frontend built using Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages). Designed to be built on top of [STF's API](https://github.com/lryanle/threatfinder-api).
+STF's frontend built using Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages). Designed to be built on top of the STF API.
 
 **Demo: [https://stf-site.vercel.app/](https://stf-site.vercel.app/)**
 
-# Setup
+## Server Setup
+
+1. Install [Node.js@18.12.20](https://nodejs.org/en/download/).
+2. Run `npm install` to install dependencies.
+3. Setup OAuth 2.0 credentials for Google and Facebook, and place them in `.env` (rename `.env.template` to `.env`).
+
+    - Get a ClientID and a ClientSecret from [Github (follow tutorial)](https://github.com/settings/applications/new) and add them to `.env`.
+
+4. Edit `config.json` or use as-is to configure the API from default settings.
+5. Rename `database/template.sqlite` to a sqlite database of your chosing, and reflect the changes in `config.json`.
+6. Run `npm run start` to start a local api server.
+7. You can now use `http://localhost:PORT` to interact with the API.
+8. You can also use `http://localhost:PORT/api-docs` to view the API documentation.
+
+## Client Setup
 
 - [Social ThreatFinder (STF) Site](#social-threatfinder-stf-site)
-- [Setup](#setup)
+  - [Server Setup](#server-setup)
+  - [Client Setup](#client-setup)
   - [Step 1. Set up the environment](#step-1-set-up-the-environment)
   - [Step 2. Run Next.js locally in development mode](#step-2-run-nextjs-locally-in-development-mode)
 

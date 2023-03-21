@@ -1,0 +1,899 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Social Threat Finder API",
+    "description": "This API provides straightforward authenticated access to the Social Threat Finder database of phishing urls and the information pertaining to them.\n\nFree access is provided with this api with strict rate limiting. To access certain features and higher limits, you will need to register, obtain, and use an authentication bearer token.\n### Global Rules\n- `/auth/register` - 2 requests/hr\n- `/auth/login` - 10 requests/0.25 hrs\n- `/user` - 20 requests/0.25 hrs\n- `/fetch` - default 30 requests and max 100 entries/0.25 hrs\n  - registered user - 60 requests and max 500 entries/0.25 hrs\n  - academic user - 180 requests and max 1000 entries/0.25 hrs\n  - admin/maintenance - no limit \n\n### Endpoint documentation\n Please consult each endpoint's documentation for details on:\n- Licensing information for the specific type of content\n  and data served via the endpoint.\n- Stability markers to inform you about development status and\n  change policy, according to\n  [our API version policy](https://ryanlahlou.com).\n- Endpoint specific usage limits.\n",
+    "version": "1.0.1 - Admin",
+    "contact": {
+      "name": "SPRLab",
+      "url": "https://sprlab.uta.edu/"
+    },
+    "license": {
+      "name": "License: MIT",
+      "url": "https://github.com/lryanle/threatfinder-api/blob/main/LICENSE"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://0.0.0.0:8022/api"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Default endpoint",
+        "description": "Default/test response to the API endpoint.",
+        "tags": [
+          "user"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the API's name."
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "summary": "Register a user to the API",
+        "description": "Create a new user in the api. This gives a user access to limits above default.",
+        "tags": [
+          "user"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "contact@ryanlahlou.com",
+                  "password": "password"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user's authentication bearer token.rate limit window resets."
+          },
+          "400": {
+            "description": "Email is likely already registered."
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Login a user to the API",
+        "description": "Used to get an authentication bearer token in case the one given at registration is lost.",
+        "tags": [
+          "user"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "contact@ryanlahlou.com",
+                  "password": "password"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user's authentication bearer token."
+          },
+          "401": {
+            "description": "Password invalid."
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Email not found."
+          }
+        }
+      }
+    },
+    "/fetch/": {
+      "post": {
+        "summary": "Fetch phishing data",
+        "description": "Endpoint for retrieving information from the Social Threat Finder phishing database.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "amount",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Amount of entries to retrieve"
+          },
+          {
+            "in": "query",
+            "name": "start",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Index to start at (offset)"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "tweetId": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "registrarName": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "urlAlive": {
+                    "type": "integer"
+                  },
+                  "geoCoords": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "creationTime": {
+                    "type": "string"
+                  },
+                  "imageUrl": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "mlVerdict": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "flexible": {
+                  "summary": "Partial filters",
+                  "value": {
+                    "registrarName": "NAMECHEAP",
+                    "creationTime": "09-29",
+                    "urlAlive": 1
+                  }
+                },
+                "strict": {
+                  "summary": "All filters",
+                  "value": {
+                    "id": 666,
+                    "tweetId": 2569195636569137700,
+                    "url": "https://lryanlle.com/",
+                    "registrarName": "NAMECHEAP INC",
+                    "ipAddress": "162.0.232.162",
+                    "urlAlive": 999,
+                    "geoCoords": "(43.6319, -79.3716)",
+                    "location": null,
+                    "creationTime": "2022-09-12T05:26:08.000Z",
+                    "imageUrl": "https://pbs.twimg.com/media/FcbmpH2XEAEpHq8.jpg",
+                    "target": "opendir",
+                    "mlVerdict": "Benign/Inactive"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns user's query to the phishing database"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Results not found"
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "Get user information",
+        "description": "Get basic information about the user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns user's email and permission."
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "User not found."
+          }
+        }
+      }
+    },
+    "/user/permission": {
+      "get": {
+        "summary": "Get user's permission",
+        "description": "Returns a user's permission name.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "user"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns user's permission name"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/admin": {
+      "get": {
+        "summary": "Get admin user information",
+        "description": "Get all information about the admin user",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all information about the admin user."
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "User not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a user",
+        "description": "Remove a user from the user database",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "contact@ryanlahlou.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User successfully removed"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/admin/permission": {
+      "get": {
+        "summary": "Get admin user's permission",
+        "description": "Returns an admin user's permission name",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns admin user's permission"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Results not found"
+          }
+        }
+      }
+    },
+    "/admin/lookup": {
+      "get": {
+        "summary": "Lookup a user's information",
+        "description": "Lookup all the information regarding a user stored in the user database",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "email",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Email of the user to lookup"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns all of the request user's information"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Requested user not found"
+          }
+        }
+      }
+    },
+    "/admin/promote": {
+      "patch": {
+        "summary": "Promote a user",
+        "description": "Promotes a user from registered (0) to academic (1)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "contact@ryanlahlou.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Promotes a user to academic"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Unable to promote user to academic"
+          }
+        }
+      }
+    },
+    "/admin/demote": {
+      "patch": {
+        "summary": "Demote a user",
+        "description": "Demotes a user from academic (1) to registered (0)",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "email": "contact@ryanlahlou.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Demotes a user to registered"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Unable to demote user to registered"
+          }
+        }
+      }
+    },
+    "/maintenance": {
+      "post": {
+        "summary": "Adds a phishing database entry",
+        "description": "Adds an entry to the phishing database",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "tweetId": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "registrarName": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "urlAlive": {
+                    "type": "integer"
+                  },
+                  "geoCoords": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "creationTime": {
+                    "type": "string"
+                  },
+                  "imageUrl": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "mlVerdict": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "id": 667,
+                  "tweetId": 2569195636569137700,
+                  "url": "https://ryanlahlou.com/",
+                  "registrarName": "NAMECHEAP INC",
+                  "ipAddress": "162.0.232.169",
+                  "urlAlive": 999,
+                  "geoCoords": "(43.6319, -79.3716)",
+                  "location": null,
+                  "creationTime": "2022-11-15T05:26:08.000Z",
+                  "imageUrl": "https://pbs.twimg.com/media/FcbmpH2XEAEpHq8.jpg",
+                  "target": "opendir",
+                  "mlVerdict": "Benign/Inactive"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully added an entry to the phishing database"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Unable to add entry"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete phishing database entries",
+        "description": "Removies queried entries from the phishing database",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "tweetId": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "registrarName": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "urlAlive": {
+                    "type": "integer"
+                  },
+                  "geoCoords": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "creationTime": {
+                    "type": "string"
+                  },
+                  "imageUrl": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "mlVerdict": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "flexible": {
+                  "summary": "Partial filters",
+                  "value": {
+                    "id": "667"
+                  }
+                },
+                "strict": {
+                  "summary": "All filters",
+                  "value": {
+                    "id": 667,
+                    "tweetId": 2569195636569137700,
+                    "url": "https://ryanlahlou.com/",
+                    "registrarName": "NAMECHEAP INC",
+                    "ipAddress": "162.0.232.169",
+                    "urlAlive": 999,
+                    "geoCoords": "(43.6319, -79.3716)",
+                    "location": null,
+                    "creationTime": "2022-11-15T05:26:08.000Z",
+                    "imageUrl": "https://pbs.twimg.com/media/FcbmpH2XEAEpHq8.jpg",
+                    "target": "opendir",
+                    "mlVerdict": "Benign/Inactive"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully removed entries from phishing database"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Unable to remove entries"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update phishing database entries",
+        "description": "Updates queried entries in the phishing database. Parameters filter results to update, and the body is the information the query will be updated with.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "system"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Filter with id",
+            "example": 667
+          },
+          {
+            "in": "query",
+            "name": "tweetId",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Filter with tweetId",
+            "example": 2569195636569137700
+          },
+          {
+            "in": "query",
+            "name": "url",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with url",
+            "example": "https://ryanlahlou.com/"
+          },
+          {
+            "in": "query",
+            "name": "registrarName",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with registrarName",
+            "example": "NAMECHEAP INC"
+          },
+          {
+            "in": "query",
+            "name": "ipAddress",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with ipAddress",
+            "example": "162.0.232.169"
+          },
+          {
+            "in": "query",
+            "name": "urlAlive",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Filter with urlAlive",
+            "example": 999
+          },
+          {
+            "in": "query",
+            "name": "geoCoords",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with geoCoords",
+            "example": "(43.6319, -79.3716)"
+          },
+          {
+            "in": "query",
+            "name": "location",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with location",
+            "example": "none"
+          },
+          {
+            "in": "query",
+            "name": "creationTime",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with creationTime",
+            "example": "2022-11-15T05:26:08.000Z"
+          },
+          {
+            "in": "query",
+            "name": "imageUrl",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with imageUrl",
+            "example": "https://pbs.twimg.com/media/FcbmpH2XEAEpHq8.jpg"
+          },
+          {
+            "in": "query",
+            "name": "target",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with target",
+            "example": "opendir"
+          },
+          {
+            "in": "query",
+            "name": "mlVerdict",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter with mlVerdict",
+            "example": "Benign/Inactive"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "tweetId": {
+                    "type": "integer"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "registrarName": {
+                    "type": "string"
+                  },
+                  "ipAddress": {
+                    "type": "string"
+                  },
+                  "urlAlive": {
+                    "type": "integer"
+                  },
+                  "geoCoords": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "creationTime": {
+                    "type": "string"
+                  },
+                  "imageUrl": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "mlVerdict": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "flexible": {
+                  "summary": "Partial filters",
+                  "value": {
+                    "url": "https://ryanlahlou.com/",
+                    "registrarName": "NAMECHEAP INC"
+                  }
+                },
+                "strict": {
+                  "summary": "All filters",
+                  "value": {
+                    "id": 667,
+                    "tweetId": 2569195636569137700,
+                    "url": "https://ryanlahlou.com/",
+                    "registrarName": "NAMECHEAP INC",
+                    "ipAddress": "162.0.232.169",
+                    "urlAlive": 999,
+                    "geoCoords": "(43.6319, -79.3716)",
+                    "location": null,
+                    "creationTime": "2022-11-15T05:26:08.000Z",
+                    "imageUrl": "https://pbs.twimg.com/media/FcbmpH2XEAEpHq8.jpg",
+                    "target": "opendir",
+                    "mlVerdict": "Benign/Inactive"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated entries"
+          },
+          "429": {
+            "description": "Rate limited - Too many requests."
+          },
+          "500": {
+            "description": "Unable to update entries"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "api": {
+    "name": "Social Threat Finder API",
+    "host": "0.0.0.0",
+    "port": 8022,
+    "protocol": "http",
+    "basePath": "api"
+  },
+  "phish_database": {
+    "client": "sqlite3",
+    "debug": true,
+    "connection": {
+      "filename": "./database/stfdb.sqlite"
+    },
+    "useNullAsDefault": true
+  },
+  "reports_database": {
+    "client": "sqlite3",
+    "debug": true,
+    "connection": {
+      "filename": "./database/reportstest3.db"
+    },
+    "useNullAsDefault": true
+  },
+  "docs": {
+    "resource": "api-docs",
+    "options": {
+      "customCss": ".swagger-ui .topbar .wrapper .topbar-wrapper .link { display: none; } .swagger-ui .topbar .wrapper .topbar-wrapper:before { content: \"University of Texas at Arlington - Security and Privacy Research Lab\"; color: white; font-size: 1.5em; font-weight: 700; }"
+    }
+  },
+  "routes": {
+    "session": {
+      "name": "session",
+      "login": {
+        "POST": {
+          "windowMs": 900000,
+          "max": 10,
+          "message": {
+            "message": "Too many logins from this IP, please try again after 15 minutes"
+          }
+        }
+      },
+      "register": {
+        "POST": {
+            "windowMs": 3600000,
+            "max": 2,
+            "message": {
+              "message": "Too many accounts created from this IP, please try again after an hour"
+            }
+        }
+      }
+    },
+    "fetch": {
+      "name": "fetch",
+      "fetch": {
+        "GET": {
+          "windowMs": 900000,
+          "max": [
+            {
+              "permission": "default",
+              "limit": 30,
+              "responses": 100
+            },
+            {
+              "permission": 0,
+              "limit": 60,
+              "responses": 500
+            },
+            {
+              "permission": 1,
+              "limit": 180,
+              "responses": 1000
+            }
+          ],
+          "skip": {
+            "permission": 2
+          },
+          "message": {
+            "message": "Too many requests from this IP, please try again after 15 minutes"
+          }
+        }
+      }
+    },
+    "reports": {}
+  },
+  "routes-old": {
+    "session": {
+      "name": "auth",
+      "endpoints": {
+        "login": {
+          "name": "login",
+          "config": {
+            "windowMs": 900000,
+            "max": 10,
+            "message": {
+              "message": "Too many logins from this IP, please try again after 15 minutes"
+            }
+          }
+        },
+        "register": {
+          "name": "register",
+          "config": {
+            "windowMs": 3600000,
+            "max": 2,
+            "message": {
+              "message": "Too many accounts created from this IP, please try again after an hour"
+            }
+          }
+        }
+      }
+    },
+    "users": {
+      "name": "user",
+      "endpoints": {
+        "users": {
+          "name": "user",
+          "config": {
+            "windowMs": 900000,
+            "max": 20,
+            "message": {
+              "message": "Too many requests from this IP, please try again after 15 minutes"
+            }
+          }
+        }
+      }
+    },
+    "fetch": {
+      "name": "fetch",
+      "endpoints": {
+        "fetch": {
+          "name": "fetch",
+          "config": {
+            "windowMs": 900000,
+            "max": [
+              {
+                "permission": "default",
+                "limit": 30,
+                "responses": 100
+              },
+              {
+                "permission": 0,
+                "limit": 60,
+                "responses": 500
+              },
+              {
+                "permission": 1,
+                "limit": 180,
+                "responses": 1000
+              }
+            ],
+            "skip": {
+              "permission": 2
+            },
+            "message": {
+              "message": "Too many requests from this IP, please try again after 15 minutes"
+            }
+          }
+        }
+      }
+    },
+    "admin": {
+      "name": "admin"
+    },
+    "maintenance": {
+      "name": "maintenance"
+    }
+  }
+}
