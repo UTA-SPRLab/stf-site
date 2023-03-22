@@ -55,15 +55,16 @@ export function SelectColumnFilter(filter) {
 
 		filter.column.preFilteredRows.forEach((row) => {
 			// if last char is a period, remove it
-			if (String(row.values[filter.column.id]).slice(-1) === ".") {
-				row.values[filter.column.id] = String(row.values[filter.column.id]).slice(0, -1);
+			if (String(row.values[filter.column.id][0]).slice(-1) === ".") {
+				row.values[filter.column.id][0] = String(row.values[filter.column.id][0]).slice(0, -1);
 			}
 
-			options.add(row.values[filter.column.id]);
+			options.add(row.values[filter.column.id][0]);
 		});
 
 		return [...options.values()];
-	}, [filter.column.id, filter.column.preFilteredRows]);
+	}, [filter.column.id[0], filter.column.preFilteredRows]);
+
 
 	// Render a multi-select box
 	return (
@@ -139,13 +140,11 @@ export function IconCell({ value, column, row }) {
 			.then((response) => {
 				console.log("lmao",response.status)
 				if (response.status == 200) {
-					console.log("asldjhalkdfhalishdfglaskjdfbalksdhjgfs")
 					return true;
-				} else { return false };
+				} else {
+					return false 
+				};
 			})
-			.catch((error) => {
-				console.log(error);
-			});
 	};
 
 	return (
@@ -228,7 +227,7 @@ export function BodyCell({ value, column, row }) {
 					{String(getFlagEmoji(row.original.report_country))}{" "}
 				</div>
 			</div>
-			<div className="flex flex-row flex-nowrap justify-between items-end">
+			<div className="flex flex-row flex-nowrap justify-between items-end hidden"> {/* GET BACK TO THIS ASAP */}
 				<div className="flex items-center gap-2">
 					<img
 						className="h-8 w-8 rounded-lg"
@@ -279,7 +278,7 @@ function ReportsDB() {
 	]);
 	// const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		fetch("http://localhost:8022/api/fetch/reports?start=0&amount=200")
+		fetch("http://localhost:8022/api/fetch/reports?start=0&amount=10000")
 			.then((res) => res.json())
 			.then((res) => {
 				setPhishList(res.message);
@@ -310,7 +309,8 @@ function ReportsDB() {
 			},
 			{
 				Header: "Category",
-				accessor: "report_category",
+				accessor: (props) => ([props.report_category, props.report_summary, props.report_user_name, props.report_source, props.report_discovered, props.report_trust, props.report_url, props.report_country]),
+				category: "report_category",
 				summary: "report_summary",
 				username: "report_user_name",
 				source: "report_source",

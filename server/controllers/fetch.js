@@ -18,7 +18,7 @@ const find = async (filters, amount, start) => {
         .orderBy('id', 'desc')
         .offset(begin)
         // .limit(amt);
-        .limit(100) //! TODO: Remove limit when adding users
+        .limit(10000) //! TODO: Remove limit when adding users
 
     if (result.length == 0) {
         return { error: "No results found" };
