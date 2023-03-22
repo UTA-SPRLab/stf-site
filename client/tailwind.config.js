@@ -26,6 +26,7 @@ module.exports = {
           8: '#f57a38',
           9: '#f1634a',
           10: '#ed4c5c',
+          100: '#ccc'
         }
       },
       spacing: {

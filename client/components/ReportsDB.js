@@ -131,13 +131,17 @@ export function StatusPill({ value }) {
 }
 
 export function IconCell({ value, column, row }) {
-	const checkUrl = (url) => {
+	 const checkUrl = async (url) => {
 		console.log("hi",url)
+		if (url === undefined) return false;
+
 		fetch(url)
 			.then((response) => {
-				if (response.status === 404) {
-					return false;
-				} else return true;
+				console.log("lmao",response.status)
+				if (response.status == 200) {
+					console.log("asldjhalkdfhalishdfglaskjdfbalksdhjgfs")
+					return true;
+				} else { return false };
 			})
 			.catch((error) => {
 				console.log(error);
@@ -147,12 +151,11 @@ export function IconCell({ value, column, row }) {
 	return (
 		<a className="flex items-center" target="_blank" href={`${row.original.report_url}`}>
 			<div className="flex flex-shrink-0 justify-center h-36 w-64">
-				<p>{value}</p>
 				<img
-					className="h-full rounded-lg"
+					className="h-full rounded-lg border"
 					src={
-						(String(value).toLowerCase() != "none") && checkUrl(String(value))
-							? String(value)
+						(!String(value).toLowerCase().includes("none") && checkUrl(value))
+							? value
 							: `./images/imagenotfound.png`
 					}
 					alt=""
@@ -212,7 +215,7 @@ export function BodyCell({ value, column, row }) {
 	const confVal = Math.round(percent / 10);
 	const pillInfo = `w-${Math.round(
 		percent / 5
-	)} rounded-full text-center flex items-center justify-center bg-gray-300 absolute z-0 bg-confidence-${confVal}`;
+	)} rounded-full text-center flex items-center justify-center absolute z-0 bg-confidence-${confVal ? confVal : 100}`;
 
 	return (
 		<div className="flex flex-col flex-nowrap justify-between items-between content-around gap-2 h-44">
