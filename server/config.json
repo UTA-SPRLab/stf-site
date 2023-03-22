@@ -10,7 +10,7 @@
     "client": "sqlite3",
     "debug": true,
     "connection": {
-      "filename": "./database/stfdb.sqlite"
+      "filename": "./database/stf_scams2.db"
     },
     "useNullAsDefault": true
   },
@@ -59,7 +59,7 @@
             {
               "permission": "default",
               "limit": 30,
-              "responses": 100
+              "responses": 10000
             },
             {
               "permission": 0,

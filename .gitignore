@@ -39,3 +39,4 @@
 # !template.sqlite
 *.log
 *.dccache
+.vercel
