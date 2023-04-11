@@ -47,7 +47,7 @@ export default function Map() {
           Return Home
         </a>
       </div>
-      <div className="mt-64"></div>
+      <div className="mt-24"></div>
       <Footer />
     </div>
   );

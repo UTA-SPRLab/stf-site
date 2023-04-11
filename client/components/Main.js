@@ -4,9 +4,9 @@ export default function Main() {
 
 	return (
 		<section className="text-gray-600 body-font">
-			<div className="max-w-7xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 				<div className="lg:flex-grow md:w-1/2 md:ml-24 pt-6 flex flex-col md:items-start md:text-left mb-40 items-center text-center sm:mb-0">
-					<h1 className="mb-5 sm:text-6xl text-5xl items-center Avenir xl:w-2/2 text-blue-500">
+					<h1 className="mt-5 mb-5 sm:text-6xl text-5xl items-center Avenir xl:w-2/2 text-blue-500">
 						Next Generation Phishing Detection and Protection
 					</h1>
 					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg">
@@ -19,25 +19,29 @@ export default function Main() {
 						>
 							<span className="justify-center">Phishing DB</span>
 						</a>
-						<a
-							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="map"
-						>
-							<span className="justify-center">Threat Map</span>
-						</a>
-						<a
-							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
+						<button
+							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
 							href="reports"
+							disabled
 						>
 							<span className="justify-center">Scam Reports</span>
-						</a>
+							<span className="justify-center text-xs">(Coming Soon)</span>
+						</button>
+						<button
+							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
+							href="map"
+							disabled
+						>
+							<span className="justify-center">Threat Map</span>
+							<span className="justify-center text-xs">(Coming Soon)</span>
+						</button>
 					</div>
 				</div>
-				<div className="xl:mr-44 sm:mr-0 sm:mb-28 mb-0 lg:mb-0 mr-48 md:pl-10 hidden sm:flex">
+				<div className="xl:mr-44 sm:mr-0 sm:mb-28 mb-0 lg:mb-0 mr-48 hidden sm:flex">
 					<img
-						className="w-80 md:ml-1 ml-24"
-						alt="iPhone-12"
-						src="/images/iPhone-12-Mockup.png"
+						className="w-120"
+						alt="Display Mockup"
+						src="/images/MacMockup.png"
 					></img>
 				</div>
 			</div>

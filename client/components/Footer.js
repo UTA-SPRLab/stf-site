@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="pb-4">
       <div className="max-w-7xl mx-auto divide-y divide-gray-200 px-4 sm:px-6 md:px-8">
-        <ul className="Footer_nav__2rFid text-xl font-medium sm:pb-20 flex justify-evenly gap-3 mb-5 md:mb-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
+        {/* <ul className="Footer_nav__2rFid text-xl font-medium sm:pb-20 flex justify-evenly gap-3 mb-5 md:mb-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
           <li className="space-y-5 row-span-2">
             <h2 className="text-xl tracking-wide text-gray-900 uppercase font-bold">
               Company
@@ -104,7 +104,7 @@ export default function Footer() {
               </li>
             </ul>
           </li>
-        </ul>
+        </ul> */}
         <div className="flex flex-col-reverse justify-between pt-5 pb-4 border-t lg:flex-row bg-top border-black">
           <ul className="flex flex-col space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
             <li>
@@ -123,7 +123,7 @@ export default function Footer() {
                 Privacy Policy
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/"
                 className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
@@ -138,13 +138,22 @@ export default function Footer() {
               >
                 Cookie Policy
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="/"
                 className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
               >
                 Partners
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://sprlab.uta.edu/"
+                target="_blank"
+                className="text-md text-black transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+              >
+                UTA SPRLab
               </a>
             </li>
           </ul>

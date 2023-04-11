@@ -36,7 +36,7 @@ export default function Reports() {
           Return Home
         </a>
       </div>
-      <div className="mt-64"></div>
+      <div className="mt-24"></div>
       {/* list of classNames for rendering */}
 			<div className="bg-confidence-0 bg-confidence-1 bg-confidence-2 bg-confidence-3 bg-confidence-4 bg-confidence-5 bg-confidence-6 bg-confidence-7 bg-confidence-8 bg-confidence-9 bg-confidence-10 bg-confidence-2 enabled disabled w-0 h-0 hidden w-1 w-2 w-3 w-4 w-5 w-6 w-7 w-8 w-9 w-10 w-11 w-12 w-13 w-14 w-15 w-16 w-17 w-18 w-19 w-20"></div>
       <Footer />

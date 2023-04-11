@@ -74,14 +74,14 @@ export default function Header() {
 									Threat Map
 								</a>
 							</li> */}
-							<li>
+							{/* <li>
 								<a
 									href="/reports"
 									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Scam Reports
 								</a>
-							</li>
+							</li> */}
 							<li>
 								<a
 									href="http://localhost:8022/api-docs"

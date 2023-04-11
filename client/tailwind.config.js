@@ -49,7 +49,8 @@ module.exports = {
         '15': '3.75rem',
         '17': '4.25rem',
         '18': '4.5rem',
-        '19': '4.75rem'
+        '19': '4.75rem',
+        '120': '30rem'
       },
       height: {
         '30': '7.5rem',
@@ -59,6 +60,12 @@ module.exports = {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
       },
+      maxWidth: {
+        '7.5xl': '84rem',
+        '8xl': '88rem',
+        '9xl': '96rem',
+        '10xl': '104rem',
+      }
     },
   },
   plugins: [

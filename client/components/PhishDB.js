@@ -59,6 +59,12 @@ export function SelectColumnFilter({
 		return [...options.values()];
 	}, [id, preFilteredRows]);
 
+	// alphabetically sort options
+	options.sort();
+	
+	// omit "Unknown" from options
+  	const filteredOptions = options.filter(option => option !== "Unknown");
+
 	// Render a multi-select box
 	return (
 		<label className="flex gap-x-2 items-baseline">
@@ -73,9 +79,11 @@ export function SelectColumnFilter({
 				}}
 			>
 				<option value="">All</option>
-				{options.map((option, i) => (
+				<option value="Unknown">Unknown</option>
+				<option value="" disabled>----------</option>
+				{filteredOptions.map((option, i) => (
 					<option key={i} value={option}>
-						{option}
+						{option.charAt(0).toUpperCase() + option.slice(1)}
 					</option>
 				))}
 			</select>
@@ -136,8 +144,8 @@ export function DualCell({ value, column, row }) {
 	let formattedValue = preFormVal.charAt(0).toUpperCase() + preFormVal.slice(1);
 
 	return (
-		<div className="flex items-center">
-			<div>
+		<div>
+			<div className="text-left">
 				<div className="text-sm font-medium text-gray-900">{value}</div>
 				<div className="text-sm text-gray-500">{formattedValue}</div>
 			</div>
@@ -326,7 +334,7 @@ function PhishDB() {
 														>
 															{cell.column.Cell.name ===
 															"defaultRenderer" ? (
-																<div className="text-sm text-gray-500">
+																<div className="text-sm text-gray-500 overflow-auto break-words">
 																	{cell.render("Cell")}
 																</div>
 															) : (
