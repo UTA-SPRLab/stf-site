@@ -5,11 +5,11 @@ export default function Main() {
 	return (
 		<section className="text-gray-600 body-font">
 			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-				<div className="lg:flex-grow md:w-1/2 md:ml-24 pt-6 flex flex-col md:items-start md:text-left mb-40 items-center text-center sm:mb-0">
+				<div className="lg:flex-grow md:w-1/2 md:ml-24 pt-6 flex flex-col md:items-start md:text-left md:mb-40 mb-10 items-center text-center sm:mb-0">
 					<h1 className="mt-5 mb-5 sm:text-6xl text-5xl items-center Avenir xl:w-2/2 text-blue-500">
 						Next Generation Phishing Detection and Protection
 					</h1>
-					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg">
+					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg text-justify">
 						ThreatFinder is a real-time community sourced anti-scam blocklist focused towards reliability and explanibility of emerging attacks which target both regular and decentralized ecosysem
 					</p>
 					<div className="flex justify-center gap-5">

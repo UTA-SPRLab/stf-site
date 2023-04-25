@@ -23,7 +23,7 @@ export default function Header() {
 						className="text-lg font-semibold rounded-lg tracking-widest focus:outline-none focus:shadow-outline"
 					>
 						<h1 className="text-4xl Avenir tracking-tighter text-blue-500 lg:text-4x1 lg:text-3xl transition duration-150 ease-in-out hover:text-blue-600">
-							Social Threat Finder
+							Social ThreatFinder
 						</h1>
 					</a>
 					<button
@@ -92,7 +92,7 @@ export default function Header() {
 							</li>
 							<li>
 								<a
-									href="/"
+									href="/about"
 									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									About Us

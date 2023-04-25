@@ -21,7 +21,7 @@ export default function Db() {
       </Head>
       <Header />
       <div className="flex flex-col justify-center mx-auto mt-32 text-center max-w-2x1">
-        <h1 className="text-3xl my-10 Avenir font-bold tracking-tight text-black md:text-5xl ">
+        <h1 className="text-3xl my-10 Avenir font-bold tracking-tight text-black md:text-5xl text-blue-500">
           STF Phishing Database
         </h1>
         <br />

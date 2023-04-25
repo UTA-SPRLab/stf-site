@@ -21,7 +21,7 @@ export default function Reports() {
       </Head>
       <Header />
       <div className="flex flex-col justify-center mx-auto mt-64 text-center max-w-2x1">
-        <h1 className="text-3xl Avenir font-bold tracking-tight text-black md:text-5xl ">
+        <h1 className="text-3xl Avenir font-bold tracking-tight text-black md:text-5xl text-blue-500">
           STF Scam Reports
         </h1>
         <br />
