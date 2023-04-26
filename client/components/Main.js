@@ -48,7 +48,7 @@ export default function Main() {
 			<section className="mx-auto">
 				<div className="container px-5 mx-auto lg:px-24 ">
 					<div className="flex flex-col items-center w-full mb-4 text-left lg:text-center">
-						<h1 className="mb-8 text-3xl Avenir font-semibold text-black" id="partners">
+						<h1 className="mb-8 text-3xl Avenir font-semibold text-gray-600" id="partners">
 							Our partners
 						</h1>
 					</div>
@@ -80,7 +80,7 @@ export default function Main() {
 			<section className="relative">
 				<div className="max-w-6xl mx-auto px-4 sm:px-1 text-center">
 					<div className="pb-24 md:pb-24">
-						<h1 className="mb-2 text-3xl Avenir font-semibold text-gray-900">
+						<h1 className="mb-2 text-3xl Avenir font-semibold text-gray-600">
 							Have any questions?
 						</h1>
 						<h1 className="mb-4 text-1xl font-semibold text-gray-600">
@@ -91,10 +91,10 @@ export default function Main() {
 							name="email"
 							type="email"
 							autoComplete="email"
-							className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-gray-800 font-semibold hover:border-gray-900"
+							className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-gray-600 font-semibold hover:border-gray-800"
 						></input>{" "}
 						<a
-							className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-gray-900"
+							className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-gray-600 hover:bg-gray-800"
 							href="/"
 						>
 							<span className="justify-center">Contact</span>

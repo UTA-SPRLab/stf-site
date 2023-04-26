@@ -253,7 +253,7 @@ export default function Team() {
 					<p className="md:text-left text-md font-light pb-2 italic text-center">
 						Advisor
 					</p>
-					<p>
+					<p className="md:text-left text-justify">
 						Dr. Shirin Nilizadeh is Assistant Professor at the Department of Computer
 						Science and Engineering, University of Texas at Arlington. She received her
 						Ph.D. in Security Informatics from the Indiana University Bloomington (IUB).
@@ -299,7 +299,7 @@ export default function Team() {
 					<p className="md:text-left text-md font-light pb-2 italic text-center">
 						Software Engineer
 					</p>
-					<p>
+					<p className="md:text-left text-justify">
 						Ryan Lahlou is an ambitious computer science student at the University of
 						Texas at Arlington (expected grad. Dec. 2024). As a former high
 						school valedictorian, Ryan has consistently demonstrated academic

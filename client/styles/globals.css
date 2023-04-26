@@ -44,8 +44,8 @@ a {
 }
 
 .greyC {
-	filter: gray;
-	-webkit-filter: grayscale(100%);
+	filter: invert(45%) sepia(11%) saturate(507%) hue-rotate(182deg) brightness(94%) contrast(83%);
+	-webkit-filter: grayscale(90%);
 	transition: 0.4s;
 }
 

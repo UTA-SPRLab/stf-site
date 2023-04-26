@@ -38,7 +38,7 @@ export default function Header() {
 							height="24"
 							viewBox="0 0 24 24"
 							fill="none"
-							stroke="#191919"
+							stroke="#4b5563"
 							strokeWidth="2"
 							strokeLinecap="round"
 							strokeLinejoin="round"
@@ -61,7 +61,7 @@ export default function Header() {
 							<li>
 								<a
 									href="/db"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Phishing DB
 								</a>
@@ -69,7 +69,7 @@ export default function Header() {
 							{/* <li>
 								<a
 									href="/map"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Threat Map
 								</a>
@@ -77,7 +77,7 @@ export default function Header() {
 							{/* <li>
 								<a
 									href="/reports"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Scam Reports
 								</a>
@@ -85,7 +85,7 @@ export default function Header() {
 							<li>
 								<a
 									href="http://localhost:8022/api-docs"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									API & Feed
 								</a>
@@ -93,7 +93,7 @@ export default function Header() {
 							<li>
 								<a
 									href="/about"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									About Us
 								</a>

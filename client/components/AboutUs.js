@@ -1,5 +1,6 @@
 import React from "react";
 import Team from "./Team";
+import ReturnHome from "./icons/ReturnHome";
 
 export default function AboutUs() {
 	return (
@@ -41,6 +42,9 @@ export default function AboutUs() {
 				</h1>
 			</div>
 			<Team />
+			<div className="flex justify-center align-center mb-20">
+				<ReturnHome />
+			</div>
 		</section>
 	);
 }

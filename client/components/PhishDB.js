@@ -67,7 +67,7 @@ export function SelectColumnFilter({
 
 	// Render a multi-select box
 	return (
-		<label className="flex gap-x-2 items-baseline">
+		<label className="flex gap-x-2 items-baseline text-gray-500">
 			<span className="text-gray-700">{render("Header")}: </span>
 			<select
 				className="rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -131,7 +131,7 @@ export function IconCell({ value, column, row }) {
 				/>
 			</div>
 			<div className="ml-4">
-				<div className="text-sm font-medium text-gray-900">
+				<div className="text-sm font-medium text-gray-700">
 					{value.charAt(0).toUpperCase() + value.slice(1)}
 				</div>
 			</div>
@@ -146,7 +146,7 @@ export function DualCell({ value, column, row }) {
 	return (
 		<div>
 			<div className="text-left">
-				<div className="text-sm font-medium text-gray-900">{value}</div>
+				<div className="text-sm font-medium text-gray-700">{value}</div>
 				<div className="text-sm text-gray-500">{formattedValue}</div>
 			</div>
 		</div>
@@ -363,15 +363,15 @@ function PhishDB() {
 					</Button>
 				</div>
 				<div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-					<div className="flex gap-x-2 items-baseline">
+					<div className="flex gap-x-2 items-baseline text-gray-600">
 						<span className="text-sm text-gray-700">
 							Page <span className="font-medium">{state.pageIndex + 1}</span> of{" "}
 							<span className="font-medium">{pageOptions.length}</span>
 						</span>
-						<label>
+						<label className="text-gray-500">
 							<span className="sr-only">Items Per Page</span>
 							<select
-								className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+								className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-500"
 								value={state.pageSize}
 								onChange={(e) => {
 									setPageSize(Number(e.target.value));
