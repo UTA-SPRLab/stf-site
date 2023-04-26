@@ -12,21 +12,23 @@ export default function AboutUs() {
 						About the Project
 					</h1>
 					<p className="mb-4 xl:w-5/6 text-gray-600 text-lg text-justify">
-						Social ThreatFinder is an OSINT (Open source intelligence) tool which
-						identifies new social engineering threats, such as phishing websites, that
-						are reported on social media networks and provides additional reliable and
-						feature-rich data about these attacks in the form of an easily accessible
-						blocklist.
+						Social ThreatFinder is a cutting-edge OSINT tool dedicated to protecting
+						users from social engineering threats by identifying and analyzing malicious
+						activities, such as phishing websites that are posted or shared on various
+						social media networks. Our user-friendly platform provides a comprehensive
+						blocklist, delivering reliable and feature-rich data to individuals and
+						organizations, empowering them to combat cyber attacks and bolster their
+						online security.
 						<br />
 						<br />
-						The creation of this tool was motivated by the findings in our work
-						“Evaluating the Effectiveness of Phishing Reports on Twitter”, published at{" "}
+						Our blocklist is updated in real-time, which can be accessed through this
+						website, or you can also sign up for our API{" "}
 						<a
 							className="text-blue-500"
 							href="https://ieeexplore.ieee.org/abstract/document/9738786?casa_token=FjAIF57PrIUAAAAA:timEgDLq87uH-jxlNFpAbrDjAxesCbdHV3Rg05ywazIEAkLi0Bb_JVNAfhNAOR0RrczqTwk3M_Y"
 							target="_blank"
 						>
-							APWG eCrime 2021
+							here
 						</a>
 						.
 					</p>

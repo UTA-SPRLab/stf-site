@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Main() {
-
 	return (
 		<section className="text-gray-600 body-font">
 			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
@@ -10,7 +9,9 @@ export default function Main() {
 						Next Generation Phishing Detection and Protection
 					</h1>
 					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg text-justify">
-						ThreatFinder is a real-time community sourced anti-scam blocklist focused towards reliability and explanibility of emerging attacks which target both regular and decentralized ecosysem
+						ThreatFinder is a real-time community sourced anti-scam blocklist focused
+						towards reliability and explanibility of emerging attacks which target both
+						regular and decentralized ecosysem
 					</p>
 					<div className="flex justify-center gap-5">
 						<a
@@ -18,6 +19,12 @@ export default function Main() {
 							href="/db"
 						>
 							<span className="justify-center">Phishing DB</span>
+						</a>
+						<a
+							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
+							href="https://sprlab.uta.edu/"
+						>
+							<span className="justify-center">Request API Key</span>
 						</a>
 						<button
 							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
@@ -27,28 +34,27 @@ export default function Main() {
 							<span className="justify-center">Scam Reports</span>
 							<span className="justify-center text-xs">(Coming Soon)</span>
 						</button>
-						<button
+						{/* <button
 							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
 							href="map"
 							disabled
 						>
 							<span className="justify-center">Threat Map</span>
 							<span className="justify-center text-xs">(Coming Soon)</span>
-						</button>
+						</button> */}
 					</div>
 				</div>
 				<div className="xl:mr-44 sm:mr-0 sm:mb-28 mb-0 lg:mb-0 mr-48 hidden sm:flex">
-					<img
-						className="w-120"
-						alt="Display Mockup"
-						src="/images/MacMockup.png"
-					></img>
+					<img className="w-120" alt="Display Mockup" src="/images/MacMockup.png"></img>
 				</div>
 			</div>
 			<section className="mx-auto">
 				<div className="container px-5 mx-auto lg:px-24 ">
 					<div className="flex flex-col items-center w-full mb-4 text-left lg:text-center">
-						<h1 className="mb-8 text-3xl Avenir font-semibold text-gray-600" id="partners">
+						<h1
+							className="mb-8 text-3xl Avenir font-semibold text-gray-600"
+							id="partners"
+						>
 							Our partners
 						</h1>
 					</div>

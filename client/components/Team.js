@@ -214,14 +214,26 @@ export default function Team() {
 						Principal Investigator
 					</p>
 					<p className="md:text-left text-justify">
-						Sayak Saha Roy is a 2nd year PhD. student at the Security and Privacy
+						Sayak Saha Roy is a 3rd year PhD. student at the Security and Privacy
 						Research Lab at UT Arlington. His work focuses on developing novel
 						strategies towards detecting and mitigating social engineering attacks that
 						spread rapidly through online resources, as well as improving prevalent
 						educational approaches aimed towards raising user awareness towards these
-						attacks. He has built Social ThreatFinder, a real-time community sourced
-						anti-scam blocklist focused towards reliability and explanibility of
-						emerging attacks which target both regular and decentralized ecosysem.
+						attacks. In 2021, he discovered how vital threat intelligence shared on
+						Twitter is overlooked by several security vendors, motivating him to publish
+						his{" "}
+						<a
+							className="text-blue-500 italics"
+							href="https://bit.ly/41ThrWc"
+							target="_blank"
+						>
+							 findings
+						</a> at APWG eCrime, and
+						subsequently designing the Social ThreatFinder framework - an effort to make
+						such data easily accessible to end users and organizations alike. After
+						spending a summer at UC Santa Barbara, Sayak is currently focused towards
+						extending STF's coverage towards decentralised threats such as
+						cryptocurrency and NFT Scams.
 					</p>
 				</div>
 			</div>
@@ -300,16 +312,16 @@ export default function Team() {
 						Software Engineer
 					</p>
 					<p className="md:text-left text-justify">
-						Ryan Lahlou is an ambitious computer science student at the University of
-						Texas at Arlington (expected grad. Dec. 2024). As a former high
-						school valedictorian, Ryan has consistently demonstrated academic
-						excellence. He has developed skills in various programming languages and
-						tools, including Java, React, Next.js, JavaScript, C++, and Python. Ryan's
-						passion for computer science is evident in his involvement in research and
-						internships, such as working with the NSF, the
-						Security and Privacy Research Lab, and an upcoming Software Engineer Intern
-						position at JPMorgan Chase & Co. In addition to academics, Ryan has founded the Association for Computing Machinery (ACM) at his university
-						and re-founded HackUTA.
+						Ryan Lahlou is a computer science student at the University of
+						Texas at Arlington (expected grad. Dec. 2024). As a former high school
+						valedictorian, Ryan has consistently demonstrated academic excellence. He
+						has developed skills in various programming languages and tools, including
+						Java, React, Next.js, JavaScript, C++, and Python. Ryan's passion for
+						computer science is evident in his involvement in research and internships,
+						such as working with the NSF, the Security and Privacy Research Lab, and an
+						upcoming Software Engineer Intern position at JPMorgan Chase & Co. In
+						addition to academics, Ryan has founded the Association for Computing
+						Machinery (ACM) and re-founded HackUTA at his university.
 					</p>
 				</div>
 			</div>
