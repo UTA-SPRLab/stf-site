@@ -22,7 +22,7 @@ export default function Main() {
 						</a>
 						<a
 							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="https://sprlab.uta.edu/"
+							href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
 						>
 							<span className="justify-center">Request API Key</span>
 						</a>

@@ -25,7 +25,7 @@ export default function AboutUs() {
 						website, or you can also sign up for our API{" "}
 						<a
 							className="text-blue-500"
-							href="https://ieeexplore.ieee.org/abstract/document/9738786?casa_token=FjAIF57PrIUAAAAA:timEgDLq87uH-jxlNFpAbrDjAxesCbdHV3Rg05ywazIEAkLi0Bb_JVNAfhNAOR0RrczqTwk3M_Y"
+							href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
 							target="_blank"
 						>
 							here
