@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ReturnHome from "../components/icons/ReturnHome";
 import { NextSeo } from "next-seo";
 import PhishDB from "../components/PhishDB"
 
@@ -20,8 +21,8 @@ export default function Db() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="flex flex-col justify-center mx-auto mt-64 text-center max-w-2x1">
-        <h1 className="text-3xl Avenir font-bold tracking-tight text-black md:text-5xl ">
+      <div className="flex flex-col justify-center mx-auto mt-32 text-center max-w-2x1">
+        <h1 className="text-3xl my-10 Avenir font-bold tracking-tight text-black md:text-5xl text-blue-500">
           STF Phishing Database
         </h1>
         <br />
@@ -29,14 +30,9 @@ export default function Db() {
           <PhishDB />
         </div>
         <br />
-        <a
-          className="w-64 p-1 mx-auto font-bold text-center text-black border border-gray-500 rounded-lg sm:p-4"
-          href="/"
-        >
-          Return Home
-        </a>
+        <ReturnHome />
       </div>
-      <div className="mt-64"></div>
+      <div className="mt-24"></div>
       <Footer />
     </div>
   );

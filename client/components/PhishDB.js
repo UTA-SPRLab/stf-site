@@ -46,6 +46,43 @@ function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) 
 	);
 }
 
+export function StatusColumnFilter({
+	column: { filterValue, setFilter, preFilteredRows, id, render },
+}) {
+	// Calculate the options for filtering
+	// using the preFilteredRows
+	const options = React.useMemo(() => {
+		const options = new Set();
+		preFilteredRows.forEach((row) => {
+			options.add(row.values[id])
+		});
+		return [...options.values()];
+	}, [id, preFilteredRows]);
+
+	// Render a multi-select box
+	return (
+		<label className="flex gap-x-2 items-baseline text-gray-500">
+			<span className="text-gray-700">{render("Header")}: </span>
+			<select
+				className="rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+				name={id}
+				id={id}
+				value={filterValue}
+				onChange={(e) => {
+					setFilter(e.target.value || undefined);
+				}}
+			>
+			<option value="">All</option>
+				{options.map((option, i) => (
+					<option key={i} value={option}>
+						{(option === 0 ? "Offline" : option === 1 ? "Online" : option === 999 ? "Unknown" : "Undefined")}
+					</option>
+				))} 
+			</select>
+		</label>
+	);
+}
+
 export function SelectColumnFilter({
 	column: { filterValue, setFilter, preFilteredRows, id, render },
 }) {
@@ -59,9 +96,15 @@ export function SelectColumnFilter({
 		return [...options.values()];
 	}, [id, preFilteredRows]);
 
+	// alphabetically sort options
+	options.sort();
+
+	// omit "Unknown" from options
+	const filteredOptions = options.filter((option) => option !== "Unknown");
+
 	// Render a multi-select box
 	return (
-		<label className="flex gap-x-2 items-baseline">
+		<label className="flex gap-x-2 items-baseline text-gray-500">
 			<span className="text-gray-700">{render("Header")}: </span>
 			<select
 				className="rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
@@ -73,9 +116,13 @@ export function SelectColumnFilter({
 				}}
 			>
 				<option value="">All</option>
-				{options.map((option, i) => (
+				<option value="Unknown">Unknown</option>
+				<option value="" disabled>
+					----------
+				</option>
+				{filteredOptions.map((option, i) => (
 					<option key={i} value={option}>
-						{option}
+						{option.charAt(0).toUpperCase() + option.slice(1)}
 					</option>
 				))}
 			</select>
@@ -123,7 +170,7 @@ export function IconCell({ value, column, row }) {
 				/>
 			</div>
 			<div className="ml-4">
-				<div className="text-sm font-medium text-gray-900">
+				<div className="text-sm font-medium text-gray-700">
 					{value.charAt(0).toUpperCase() + value.slice(1)}
 				</div>
 			</div>
@@ -136,9 +183,9 @@ export function DualCell({ value, column, row }) {
 	let formattedValue = preFormVal.charAt(0).toUpperCase() + preFormVal.slice(1);
 
 	return (
-		<div className="flex items-center">
-			<div>
-				<div className="text-sm font-medium text-gray-900">{value}</div>
+		<div>
+			<div className="text-left">
+				<div className="text-sm font-medium text-gray-700">{value}</div>
 				<div className="text-sm text-gray-500">{formattedValue}</div>
 			</div>
 		</div>
@@ -204,6 +251,8 @@ function PhishDB() {
 				Header: "Status",
 				accessor: "urlAlive",
 				Cell: StatusPill,
+				Filter: StatusColumnFilter, // new
+				// filter: "includes",
 			},
 			{
 				Header: "Target",
@@ -326,7 +375,7 @@ function PhishDB() {
 														>
 															{cell.column.Cell.name ===
 															"defaultRenderer" ? (
-																<div className="text-sm text-gray-500">
+																<div className="text-sm text-gray-500 overflow-auto break-words">
 																	{cell.render("Cell")}
 																</div>
 															) : (
@@ -355,15 +404,15 @@ function PhishDB() {
 					</Button>
 				</div>
 				<div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-					<div className="flex gap-x-2 items-baseline">
+					<div className="flex gap-x-2 items-baseline text-gray-600">
 						<span className="text-sm text-gray-700">
 							Page <span className="font-medium">{state.pageIndex + 1}</span> of{" "}
 							<span className="font-medium">{pageOptions.length}</span>
 						</span>
-						<label>
+						<label className="text-gray-500">
 							<span className="sr-only">Items Per Page</span>
 							<select
-								className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+								className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-500"
 								value={state.pageSize}
 								onChange={(e) => {
 									setPageSize(Number(e.target.value));

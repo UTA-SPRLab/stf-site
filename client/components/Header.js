@@ -12,7 +12,7 @@ export default function Header() {
 
 	return (
 		<div
-			className={`fixed transition-all top-0 w-full z-[10000] clearNav md:bg-opacity-90 duration-300 ease-in-out transition-all ${
+			className={`fixed transition-all top-0 w-full z-[10000] clearNav md:bg-opacity-90 duration-300 ease-in-out ${
 				scrollActive ? " shadow-md pt-0" : " pt-4"
 			}`}
 		>
@@ -23,7 +23,7 @@ export default function Header() {
 						className="text-lg font-semibold rounded-lg tracking-widest focus:outline-none focus:shadow-outline"
 					>
 						<h1 className="text-4xl Avenir tracking-tighter text-blue-500 lg:text-4x1 lg:text-3xl transition duration-150 ease-in-out hover:text-blue-600">
-							Social Threat Finder
+							Social ThreatFinder
 						</h1>
 					</a>
 					<button
@@ -38,7 +38,7 @@ export default function Header() {
 							height="24"
 							viewBox="0 0 24 24"
 							fill="none"
-							stroke="#191919"
+							stroke="#4b5563"
 							strokeWidth="2"
 							strokeLinecap="round"
 							strokeLinejoin="round"
@@ -61,7 +61,7 @@ export default function Header() {
 							<li>
 								<a
 									href="/db"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Phishing DB
 								</a>
@@ -69,31 +69,31 @@ export default function Header() {
 							{/* <li>
 								<a
 									href="/map"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Threat Map
 								</a>
 							</li> */}
-							<li>
+							{/* <li>
 								<a
 									href="/reports"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Scam Reports
 								</a>
-							</li>
+							</li> */}
 							<li>
 								<a
 									href="http://localhost:8022/api-docs"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									API & Feed
 								</a>
 							</li>
 							<li>
 								<a
-									href="/"
-									className="font-medium text-gray-900 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+									href="/about"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									About Us
 								</a>

@@ -39,4 +39,5 @@
 # !template.sqlite
 *.log
 *.dccache
+.DS_Store
 .vercel

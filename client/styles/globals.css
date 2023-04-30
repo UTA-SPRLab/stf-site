@@ -44,8 +44,8 @@ a {
 }
 
 .greyC {
-	filter: gray;
-	-webkit-filter: grayscale(100%);
+	filter: invert(45%) sepia(11%) saturate(507%) hue-rotate(182deg) brightness(94%) contrast(83%);
+	-webkit-filter: grayscale(90%);
 	transition: 0.4s;
 }
 
@@ -70,7 +70,7 @@ td:nth-child(2) {
 
 	.enabled {
 		color: white;
-		background-color: #3482F6 !important;
+		background-color: #3482f6 !important;
 	}
 
 	.disabled {
@@ -122,4 +122,86 @@ td:nth-child(2) {
 		color: white;
 		background-color: "#ed4c5c";
 	}
+}
+
+.atvImg {
+	transform-style: preserve-3d;
+	-webkit-tap-highlight-color: rgba(#000, 0);
+}
+
+.atvImg img {
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(14, 21, 47, 0.25);
+}
+
+.atvImg-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	transition: all 0.2s ease-out;
+}
+
+.atvImg-container.over .atvImg-shadow {
+	box-shadow: 0 45px 100px rgba(14, 21, 47, 0.4), 0 16px 40px rgba(14, 21, 47, 0.4);
+}
+
+.atvImg-layers {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	transform-style: preserve-3d;
+}
+
+.atvImg-rendered-layer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: transparent;
+	background-size: cover;
+	transition: all 0.1s ease-out;
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+.atvImg-shadow {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	transition: all 0.2s ease-out;
+	box-shadow: 0 8px 30px rgba(14, 21, 47, 0.6);
+}
+
+.atvImg-shine {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 8px;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+.github {
+	filter: invert(12%) sepia(16%) saturate(11%) hue-rotate(63deg) brightness(96%) contrast(97%);
+}
+
+.linkedin {
+	filter: invert(32%) sepia(67%) saturate(6282%) hue-rotate(184deg) brightness(93%) contrast(101%);
+}
+
+.twitter {
+	filter: invert(46%) sepia(93%) saturate(615%) hue-rotate(166deg) brightness(97%) contrast(95%);
+}
+
+.internet {
+	filter: invert(53%) sepia(60%) saturate(4941%) hue-rotate(202deg) brightness(98%) contrast(97%);
 }
