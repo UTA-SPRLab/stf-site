@@ -12,7 +12,7 @@ export default function Header() {
 
 	return (
 		<div
-			className={`fixed transition-all top-0 w-full z-[10000] clearNav md:bg-opacity-90 duration-300 ease-in-out transition-all ${
+			className={`fixed transition-all top-0 w-full z-[10000] clearNav md:bg-opacity-90 duration-300 ease-in-out ${
 				scrollActive ? " shadow-md pt-0" : " pt-4"
 			}`}
 		>

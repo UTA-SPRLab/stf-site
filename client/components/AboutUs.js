@@ -1,5 +1,6 @@
 import React from "react";
 import Team from "./Team";
+import ResearchCitation from "./icons/ResearchCitation";
 import ReturnHome from "./icons/ReturnHome";
 
 export default function AboutUs() {
@@ -24,7 +25,7 @@ export default function AboutUs() {
 						Our blocklist is updated in real-time, which can be accessed through this
 						website, or you can also sign up for our API{" "}
 						<a
-							className="text-blue-500"
+							className="text-blue-500 hover:text-blue-600 transition-all"
 							href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
 							target="_blank"
 						>
@@ -37,14 +38,27 @@ export default function AboutUs() {
 
 			<div className="flex flex-col items-center w-full mb-4 text-center">
 				<h1
-					className="text-5xl Avenir font-semibold text-black text-blue-500"
+					className="text-5xl Avenir font-semibold text-blue-500"
 					id="partners"
 				>
 					Meet the Team
 				</h1>
 			</div>
 			<Team />
-			<div className="flex justify-center align-center mb-20">
+			<div className="flex flex-col items-center w-full mb-4 text-center">
+				<h1
+					className="text-5xl Avenir font-semibold text-blue-500"
+					id="partners"
+				>
+					Related Research
+				</h1>
+				<div className="flex justify-center items-center flex-col w-2/3">
+					<ResearchCitation id="0" pos="top" title="Evaluating the effectiveness of phishing reports on twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
+					<ResearchCitation id="1" title="Evaluating the effectiveness of phishing reports on twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
+					<ResearchCitation id="2" pos="bottom" title="Evaluating the effectiveness of phishing reports on twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
+				</div>
+			</div>
+			<div className="flex justify-center align-center m-20">
 				<ReturnHome />
 			</div>
 		</section>

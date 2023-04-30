@@ -178,28 +178,28 @@ export default function Team() {
 					<img src="./images/team-Sayak.jpeg" className="rounded" />
 					<div className="flex justify-center items-center p-2">
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://linkedin.com/in/sayak-saha-roy-8682461a2/"
 							target="_blank"
 						>
 							<img src="./icons/linkedin.svg" className="w-6 linkedin" />
 						</a>
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://github.com/sayaksr"
 							target="_blank"
 						>
 							<img src="./icons/github.svg" className="w-6 github" />
 						</a>
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://twitter.com/SayakSahaRoy"
 							target="_blank"
 						>
 							<img src="./icons/twitter.svg" className="w-6 twitter" />
 						</a>
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://sayaksr.com/"
 							target="_blank"
 						>
@@ -223,7 +223,7 @@ export default function Team() {
 						Twitter is overlooked by several security vendors, motivating him to publish
 						his{" "}
 						<a
-							className="text-blue-500 italics"
+							className="text-blue-500 hover:text-blue-600 transition-all italics"
 							href="https://bit.ly/41ThrWc"
 							target="_blank"
 						>
@@ -242,14 +242,14 @@ export default function Team() {
 					<img src="./images/team-Nilizadeh.jpg" className="rounded" />
 					<div className="flex justify-center items-center p-2">
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://twitter.com/ShirinNilizadeh"
 							target="_blank"
 						>
 							<img src="./icons/twitter.svg" className="w-6 twitter" />
 						</a>
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://sprlab.uta.edu/"
 							target="_blank"
 						>
@@ -283,21 +283,21 @@ export default function Team() {
 					<img src="./images/team-Ryan.jpg" className="rounded" />
 					<div className="flex justify-center items-center p-2">
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://linkedin.com/in/lryanle/"
 							target="_blank"
 						>
 							<img src="./icons/linkedin.svg" className="w-6 linkedin" />
 						</a>
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://github.com/lryanle"
 							target="_blank"
 						>
 							<img src="./icons/github.svg" className="w-6 github" />
 						</a>
 						<a
-							className="w-8 h-8 mx-1 bg-slate-100 p-1 rounded flex justify-center items-center"
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://lryanle.com/"
 							target="_blank"
 						>

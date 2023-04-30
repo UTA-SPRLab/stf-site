@@ -46,6 +46,43 @@ function GlobalFilter({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) 
 	);
 }
 
+export function StatusColumnFilter({
+	column: { filterValue, setFilter, preFilteredRows, id, render },
+}) {
+	// Calculate the options for filtering
+	// using the preFilteredRows
+	const options = React.useMemo(() => {
+		const options = new Set();
+		preFilteredRows.forEach((row) => {
+			options.add(row.values[id])
+		});
+		return [...options.values()];
+	}, [id, preFilteredRows]);
+
+	// Render a multi-select box
+	return (
+		<label className="flex gap-x-2 items-baseline text-gray-500">
+			<span className="text-gray-700">{render("Header")}: </span>
+			<select
+				className="rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+				name={id}
+				id={id}
+				value={filterValue}
+				onChange={(e) => {
+					setFilter(e.target.value || undefined);
+				}}
+			>
+			<option value="">All</option>
+				{options.map((option, i) => (
+					<option key={i} value={option}>
+						{(option === 0 ? "Offline" : option === 1 ? "Online" : option === 999 ? "Unknown" : "Undefined")}
+					</option>
+				))} 
+			</select>
+		</label>
+	);
+}
+
 export function SelectColumnFilter({
 	column: { filterValue, setFilter, preFilteredRows, id, render },
 }) {
@@ -61,9 +98,9 @@ export function SelectColumnFilter({
 
 	// alphabetically sort options
 	options.sort();
-	
+
 	// omit "Unknown" from options
-  	const filteredOptions = options.filter(option => option !== "Unknown");
+	const filteredOptions = options.filter((option) => option !== "Unknown");
 
 	// Render a multi-select box
 	return (
@@ -80,7 +117,9 @@ export function SelectColumnFilter({
 			>
 				<option value="">All</option>
 				<option value="Unknown">Unknown</option>
-				<option value="" disabled>----------</option>
+				<option value="" disabled>
+					----------
+				</option>
 				{filteredOptions.map((option, i) => (
 					<option key={i} value={option}>
 						{option.charAt(0).toUpperCase() + option.slice(1)}
@@ -212,6 +251,8 @@ function PhishDB() {
 				Header: "Status",
 				accessor: "urlAlive",
 				Cell: StatusPill,
+				Filter: StatusColumnFilter, // new
+				// filter: "includes",
 			},
 			{
 				Header: "Target",

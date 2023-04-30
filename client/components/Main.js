@@ -1,4 +1,5 @@
 import React from "react";
+import { DisabledButton, EnabledButton } from "./icons/Buttons";
 
 export default function Main() {
 	return (
@@ -14,26 +15,9 @@ export default function Main() {
 						regular and decentralized ecosysem
 					</p>
 					<div className="flex justify-center gap-5">
-						<a
-							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="/db"
-						>
-							<span className="justify-center">Phishing DB</span>
-						</a>
-						<a
-							className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
-							href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
-						>
-							<span className="justify-center">Request API Key</span>
-						</a>
-						<button
-							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
-							href="reports"
-							disabled
-						>
-							<span className="justify-center">Scam Reports</span>
-							<span className="justify-center text-xs">(Coming Soon)</span>
-						</button>
+						<EnabledButton href="/db">Phishing DB</EnabledButton>
+						<EnabledButton href="https://forms.gle/Fz5U9E9WkYtzhuMj6">Request API Key</EnabledButton>
+						<DisabledButton status="(Coming Soon)">Scam Reports</DisabledButton>
 						{/* <button
 							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
 							href="map"
@@ -55,30 +39,33 @@ export default function Main() {
 							className="mb-8 text-3xl Avenir font-semibold text-gray-600"
 							id="partners"
 						>
-							Our partners
+							Special Thanks To...
 						</h1>
 					</div>
 					<div className="flex justify-evenly items-center gap-8 mb-16 text-center">
-						<div className="flex items-center justify-cente w-32">
+						<div className="flex items-center justify-center flex-col w-36 gap-2">
 							<img
 								src="/images/Comcast-Logo.png"
 								alt="Shopify Logo"
 								className="block object-contain h-16 greyC"
 							></img>
+							<p>Grant Sponsor</p>
 						</div>
-						<div className="flex items-center justify-center w-32">
+						<div className="flex items-center justify-center flex-col w-36 gap-2">
 							<img
 								src="/images/UTA-CSE-Logo.png"
 								alt="Google Logo"
 								className="block object-contain h-16 greyC"
 							></img>
+							<p>Collaborator</p>
 						</div>
-						<div className="flex items-center justify-center w-32">
+						<div className="flex items-center justify-center flex-col w-36 gap-2">
 							<img
 								src="/images/SPRL-UTA-Logo.png"
 								alt="Cloudflare Logo"
 								className="block object-contain h-16 greyC"
 							></img>
+							<p>Collaborator</p>
 						</div>
 					</div>
 				</div>
@@ -92,19 +79,15 @@ export default function Main() {
 						<h1 className="mb-4 text-1xl font-semibold text-gray-600">
 							Feel free to contact us and we'll get back right away.
 						</h1>
-						<input
+						{/* <input
 							placeholder="email@gmail.com"
 							name="email"
 							type="email"
 							autoComplete="email"
 							className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-gray-600 font-semibold hover:border-gray-800"
-						></input>{" "}
-						<a
-							className="inline-flex items-center px-14 py-3 mt-2 ml-2 font-medium text-white transition duration-500 ease-in-out transform bg-transparent border rounded-lg bg-gray-600 hover:bg-gray-800"
-							href="/"
-						>
-							<span className="justify-center">Contact</span>
-						</a>
+						></input>{" "} */}
+
+						<EnabledButton href="mailto:sprlab-notifications@uta.edu">Contact Us</EnabledButton>
 					</div>
 				</div>
 			</section>
