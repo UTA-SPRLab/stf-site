@@ -350,6 +350,25 @@ else:
 					<img alt="API Users" src="/images/api-section-use.png"></img>
 				</div>
 			</section>
+			<div className="mx-8 w-4/5 border-t lg:flex-row bg-top border-gray-300" />
+			<section className="flex md:flex-row flex-col items-center justify-center md:mx-32">
+				<div className="w-2/5 hidden lg:flex px-5 py-24 mx-auto">
+					<img alt="API Users" src="/images/api-section-docs.png"></img>
+				</div>
+				<div className="lg:w-3/5 flex flex-col items-center px-5 py-8 mx-auto gap-4">
+					<h1 className="text-6xl items-center Avenir xl:w-2/2 text-blue-500 text-center">
+						Documentation
+					</h1>
+					<p className="text-gray-600 text-lg text-justify items-center">
+						Extensive information about our API can be found in our documentation.
+						Embedded in these docs are endpoints, examples, and more.
+					</p>
+
+					<EnabledButton href="http://0.0.0.0:8022/api-docs/">
+						API Documentation
+					</EnabledButton>
+				</div>
+			</section>
 		</section>
 	);
 }
