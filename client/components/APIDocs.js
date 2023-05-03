@@ -186,8 +186,8 @@ export default function APIDocs() {
 										<p>Default</p>
 									</div>
 								</td>
-								<td className="border-r px-4 py-1 text-center">30</td>
-								<td className="px-4 py-1">500</td>
+								<td className="border-r px-4 py-1 text-center">30 Requests</td>
+								<td className="px-4 py-1">500 URLs</td>
 							</tr>
 							<tr className="border-b text-red-700 hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 leading-4 text-left mx-4">
@@ -200,8 +200,8 @@ export default function APIDocs() {
 									</div>
 									<p className="text-sm text-center">(Coming Soon)</p>
 								</td>
-								<td className="border-r px-4 py-1 text-center">60</td>
-								<td className="px-4 py-1">1000</td>
+								<td className="border-r px-4 py-1 text-center">60 Requests</td>
+								<td className="px-4 py-1">1000 URLs</td>
 							</tr>
 							<tr className="hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 text-center">
@@ -213,8 +213,8 @@ export default function APIDocs() {
 										<p>Academic</p>
 									</div>
 								</td>
-								<td className="border-r px-4 py-1 text-center">180</td>
-								<td className="px-4 py-1">5000</td>
+								<td className="border-r px-4 py-1 text-center">180 Requests</td>
+								<td className="px-4 py-1">5000 URLs</td>
 							</tr>
 						</tbody>
 					</table>
