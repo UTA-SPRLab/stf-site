@@ -42,7 +42,7 @@ export default function APIDocs() {
 			buttons.item(i).classList.remove("selected");
 		}
 
-		element.scrollIntoView({ behavior: "smooth" });
+		// element.scrollIntoView({ behavior: "smooth" });
 	};
 
 	return (
