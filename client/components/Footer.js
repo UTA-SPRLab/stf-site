@@ -110,7 +110,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-600 transition-colors duration-300 hover:text-blue-500 font-semibold"
               >
                 Terms of Service
               </a>
@@ -118,7 +118,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-600 transition-colors duration-300  hover:text-blue-500 font-semibold"
               >
                 Privacy Policy
               </a>
@@ -142,7 +142,7 @@ export default function Footer() {
             <li>
               <a
                 href="/"
-                className="text-md text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-600 transition-colors duration-300 hover:text-blue-500 font-semibold"
               >
                 Partners
               </a>
@@ -151,7 +151,7 @@ export default function Footer() {
               <a
                 href="https://sprlab.uta.edu/"
                 target="_blank"
-                className="text-md text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold"
+                className="text-md text-gray-600 transition-colors duration-300 hover:text-blue-500 font-semibold"
               >
                 UTA SPRLab
               </a>
@@ -160,7 +160,7 @@ export default function Footer() {
           <ul className="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
             <a
               href="#partners"
-              className="text-md text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400 font-semibold tracking-tight"
+              className="text-md text-gray-600 transition-colors duration-300 hover:text-blue-500 font-semibold tracking-tight"
             >
               © 2023 Social Threat Finder.
             </a>
