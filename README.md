@@ -82,4 +82,4 @@ yarn install && yarn dev
 
 The site should be up and running on [http://localhost:3000](http://localhost:3000).
 
-[vercel-deploy]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flryanle%2Fstf-site&repository-name=stf-site&project-name=stf-site&demo-title=Social%20ThreatFinder%20Site&demo-description=Live%20STF%20site%20deployed%20with%20a%20phishing%20dashboard%20and%20interface&demo-url=https%3A%2F%2Fstf-site.vercel.app%2F
+[vercel-deploy]: https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FUTA-SPRLab%2Fstf-site&repository-name=stf-site&project-name=stf-site&demo-title=Social%20ThreatFinder%20Site&demo-description=Live%20STF%20site%20deployed%20with%20a%20phishing%20dashboard%20and%20interface&demo-url=https%3A%2F%2Fstf-site.vercel.app%2F
