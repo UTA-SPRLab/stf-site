@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "highlight.js/styles/github-dark-dimmed.css";
 
 function MyApp({ Component, pageProps }) {
 	const [loggedIn, setLoggedIn] = useState(false);

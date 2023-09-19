@@ -17,13 +17,13 @@ export default function Header() {
 			}`}
 		>
 			<div className="flex flex-col max-w-7xl px-4 mx-auto lg:items-center lg:justify-between lg:flex-row lg:px-8">
-				<div className="flex flex-row items-center justify-between p-4">
+				<div className="flex flex-row items-center justify-between p-4 border-b border-gray-300 md:border-none">
 					<a
 						href="/"
 						className="text-lg font-semibold rounded-lg tracking-widest focus:outline-none focus:shadow-outline"
 					>
-						<h1 className="text-4xl Avenir tracking-tighter text-blue-500 lg:text-4x1 lg:text-3xl transition duration-150 ease-in-out hover:text-blue-600">
-							Social ThreatFinder
+						<h1 className="text-4xl Avenir tracking-tighter text-blue-500 lg:text-4x1 lg:text-3xl transition duration-150 ease-in-out hover:text-blue-600 before:content-['STF'] md:before:content-['Social_ThreatFinder']" >
+							
 						</h1>
 					</a>
 					<button
@@ -57,7 +57,7 @@ export default function Header() {
 					}
 				>
 					<nav className="flex-col flex-grow">
-						<ul className="flex flex-grow justify-end items-center content-center flex-wrap mb-4 sm:mb-0">
+						<ul className="flex flex-grow flex-col md:flex-row md:justify-end justify-start items-center content-center flex-wrap my-2 sm:mb-0">
 							<li>
 								<a
 									href="/db"
@@ -84,7 +84,7 @@ export default function Header() {
 							</li> */}
 							<li>
 								<a
-									href="http://localhost:8022/api-docs"
+									href="/docs"
 									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									API & Feed

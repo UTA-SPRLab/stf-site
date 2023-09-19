@@ -36,6 +36,7 @@ export function EnabledButton({ children, href, ...rest }) {
 		<a
 			className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
 			href={`${href}`}
+			target="_blank"
 			{...rest}
 		>
 			<span className="justify-center">{children}</span>

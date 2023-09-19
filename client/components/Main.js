@@ -4,9 +4,9 @@ import { DisabledButton, EnabledButton } from "./icons/Buttons";
 export default function Main() {
 	return (
 		<section className="text-gray-600 body-font">
-			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-				<div className="lg:flex-grow md:w-1/2 md:ml-24 pt-6 flex flex-col md:items-start md:text-left md:mb-40 mb-10 items-center text-center sm:mb-0">
-					<h1 className="mt-5 mb-5 sm:text-6xl text-5xl items-center Avenir xl:w-2/2 text-blue-500">
+			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:mt-10 md:mx-32 md:flex-row flex-col items-center">
+				<div className="lg:flex-grow lg:w-3/5 flex flex-col lg:items-start lg:text-left items-center text-center p-6">
+					<h1 className="text-7xl items-center Avenir xl:w-2/2 mb-10 md:mb-4 md:leading-16 leading-14 text-blue-500">
 						Next Generation Phishing Detection and Protection
 					</h1>
 					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg text-justify">
@@ -28,8 +28,8 @@ export default function Main() {
 						</button> */}
 					</div>
 				</div>
-				<div className="xl:mr-44 sm:mr-0 sm:mb-28 mb-0 lg:mb-0 mr-48 hidden sm:flex">
-					<img className="w-120" alt="Display Mockup" src="/images/MacMockup.png"></img>
+				<div className="w-2/5 hidden lg:flex">
+					<img alt="Display Mockup" src="/images/MacMockup.png"></img>
 				</div>
 			</div>
 			<section className="mx-auto">

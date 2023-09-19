@@ -37,12 +37,14 @@ module.exports = {
       },
       lineHeight: {
         tight: 1.2,
+        '14': '3.5rem',
+        '16': '4rem',
       },
       fontSize: {
         '5xl': '2.5rem',
         '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem'
+        '7xl': '3rem',
+        '8xl': '3.25rem'
       },
       width: {
         '13': '3.25rem',

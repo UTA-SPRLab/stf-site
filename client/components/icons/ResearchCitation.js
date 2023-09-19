@@ -68,7 +68,23 @@ export default function ResearchCitation({
 					href={`${link}`}
 					target="_blank"
 				>
-					IEEE Xplore
+					{(publisher === "IEEE") ? "IEEE Xplore" : 
+					 (publisher === "ACM") ? "ACM DL" : 
+					 (publisher === "Springer") ? "Springer" : 
+					 (publisher === "Google Scholar") ? "Google Scholar" : 
+					 (publisher === "arXiv") ? "arXiv" :
+					 (publisher === "ScienceDirect") ? "ScienceDirect" : 
+					 (publisher === "Wiley") ? "Wiley OL" : 
+					 (publisher === "Taylor & Francis") ? "T&F" : 
+					 (publisher === "Elsevier") ? "Elsevier" : 
+					 (publisher === "SAGE") ? "SAGE" : 
+					 (publisher === "Oxford University Press") ? "Oxford" : 
+					 (publisher === "Cambridge University Press") ? "Cambridge" : 
+					 (publisher === "Emerald") ? "Emerald" : 
+					 (publisher === "MDPI") ? "MDPI" : 
+					 (publisher === "IOP Publishing") ? "IOPscience" : 
+					 (publisher === "NDSS") ? "NDSS" : "Publisher"
+					}
 				</a>
 				<a
 					className="citeButton inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"

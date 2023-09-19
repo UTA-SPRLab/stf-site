@@ -45,17 +45,17 @@ export default function AboutUs() {
 				</h1>
 			</div>
 			<Team />
-			<div className="flex flex-col items-center w-full mb-4 text-center">
+			<div className="flex flex-col items-center w-full text-center">
 				<h1
-					className="text-5xl Avenir font-semibold text-blue-500"
+					className="text-5xl Avenir font-semibold text-blue-500 mb-4"
 					id="partners"
 				>
 					Related Research
 				</h1>
 				<div className="flex justify-center items-center flex-col w-2/3">
-					<ResearchCitation id="0" pos="top" title="Evaluating the effectiveness of phishing reports on twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
-					<ResearchCitation id="1" title="Evaluating the effectiveness of phishing reports on twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
-					<ResearchCitation id="2" pos="bottom" title="Evaluating the effectiveness of phishing reports on twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
+					<ResearchCitation id="0" pos="top" title="Evaluating the Effectiveness of Phishing Reports on Twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="2021 APWG Symposium on Electronic Crime Research (eCrime)" publisher="IEEE" year="2021" link="https://ieeexplore.ieee.org/abstract/document/9738786" />
+					<ResearchCitation id="1" title="What Remains Uncaught?: Characterizing Sparsely Detected Malicious URLs on Twitter" authors="Sayak Saha Roy, Unique Karanjit, and Shirin Nilizadeh" journal="Network and Distributed System Security (NDSS) Symposium" publisher="NDSS" year="2021" link="https://www.ndss-symposium.org/ndss-paper/auto-draft-147/" />
+					<ResearchCitation id="2" pos="bottom" title="Cybersecurity Misinformation Detection on Social Media: Case Studies on Phishing Reports and Zoom's Threats" authors="Mohit Singhal, Nihal Kumarswamy, Shreyasi Kinhekar, and Shirin Nilizadeh" journal="ICWSM 2023" publisher="arXiv" year="2021" link="https://arxiv.org/abs/2110.12296" />
 				</div>
 			</div>
 			<div className="flex justify-center align-center m-20">

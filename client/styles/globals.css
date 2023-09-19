@@ -55,10 +55,10 @@ a {
 	transition: 0.4s;
 }
 
-td:nth-child(2) {
+/* td:nth-child(2) {
 	text-align: left;
 	min-width: 20rem;
-}
+} */
 
 @layer base {
 	.font-outline-2 {
@@ -204,4 +204,27 @@ td:nth-child(2) {
 
 .internet {
 	filter: invert(53%) sepia(60%) saturate(4941%) hue-rotate(202deg) brightness(98%) contrast(97%);
+}
+
+.grayIcon {
+	filter: invert(46%) sepia(24%) saturate(240%) hue-rotate(182deg) brightness(91%) contrast(85%);
+}
+
+.disabledIcon {
+	filter: invert(13%) sepia(95%) saturate(3023%) hue-rotate(352deg) brightness(107%) contrast(88%);
+}
+
+.selected {
+	color: #3b82f6 !important;
+	border-bottom: #3b82f6 solid 2px !important;
+}
+
+.notSelected {
+	color: #4B5563;
+	border-bottom: #e5e7eb solid 1px
+}
+
+.notSelected:hover {
+	color: #374151;
+	border-bottom: #9ca3af solid 1px
 }

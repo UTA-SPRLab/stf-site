@@ -322,7 +322,7 @@ function PhishDB() {
 						<div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
 							<table
 								{...getTableProps()}
-								className="min-w-full divide-y divide-gray-200"
+								className="min-w-full divide-y divide-gray-200 text-left"
 							>
 								<thead className="bg-gray-50">
 									{headerGroups.map((headerGroup) => (
