@@ -192,6 +192,15 @@ export function DualCell({ value, column, row }) {
 	);
 }
 
+export function StyledCell({ value }) {
+
+	return (
+		<div className="text-sm text-gray-500 overflow-auto break-words">
+			{value}
+		</div>
+	);
+}
+
 function PhishDB() {
 	// Use the state and functions returned from useTable to build your UI
 
@@ -236,10 +245,12 @@ function PhishDB() {
 			{
 				Header: "ID",
 				accessor: "id",
+				Cell: StyledCell,
 			},
 			{
 				Header: "URL",
 				accessor: "url",
+				Cell: StyledCell,
 			},
 			{
 				Header: "IP Address",

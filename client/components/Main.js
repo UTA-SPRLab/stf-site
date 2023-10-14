@@ -11,12 +11,14 @@ export default function Main() {
 					</h1>
 					<p className="mb-4 xl:w-3/4 text-gray-600 text-lg text-justify">
 						ThreatFinder is a real-time community sourced anti-scam blocklist focused
-						towards reliability and explanibility of emerging attacks which target both
-						regular and decentralized ecosysem
+						towards reliability and explainability of emerging attacks which target both
+						regular and decentralized ecosystem.
 					</p>
 					<div className="flex justify-center gap-5">
 						<EnabledButton href="/db">Phishing DB</EnabledButton>
-						<EnabledButton href="https://forms.gle/Fz5U9E9WkYtzhuMj6">Request API Key</EnabledButton>
+						<EnabledButton href="https://forms.gle/Fz5U9E9WkYtzhuMj6">
+							Request API Key
+						</EnabledButton>
 						<DisabledButton status="(Coming Soon)">Scam Reports</DisabledButton>
 						{/* <button
 							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
@@ -39,11 +41,29 @@ export default function Main() {
 							className="mb-8 text-3xl Avenir font-semibold text-gray-600"
 							id="partners"
 						>
-							Special Thanks To...
+							{/* Special Thanks To... */} Developed by the{" "}
+							<a
+								className="text-blue-500 hover:text-blue-600 transition-all"
+								href="https://sprlab.uta.edu/"
+								target="_blank"
+							>
+								Security and Privacy Research Lab
+							</a>
+							<br />
+							at the{" "}
+							<a
+								className="text-blue-500 hover:text-blue-600 transition-all"
+								href="https://cse.uta.edu/"
+								target="_blank"
+							>
+								University of Texas at Arlington
+							</a>
 						</h1>
 					</div>
-					<div className="flex justify-evenly items-center gap-8 mb-16 text-center">
-						<div className="flex items-center justify-center flex-col w-36 gap-2">
+					<div className="flex justify-center items-center gap-8 mb-16 text-center">
+						<EnabledButton href="https://sprlab.uta.edu/">SPRLab Website</EnabledButton>
+						<EnabledButton href="https://cse.uta.edu/">UTA CSE Website</EnabledButton>
+						{/* <div className="flex items-center justify-center flex-col w-36 gap-2">
 							<img
 								src="/images/Comcast-Logo.png"
 								alt="Shopify Logo"
@@ -66,11 +86,11 @@ export default function Main() {
 								className="block object-contain h-16 greyC"
 							></img>
 							<p>Collaborator</p>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</section>
-			<section className="relative">
+			{/* <section className="relative">
 				<div className="max-w-6xl mx-auto px-4 sm:px-1 text-center">
 					<div className="pb-24 md:pb-24">
 						<h1 className="mb-2 text-3xl Avenir font-semibold text-gray-600">
@@ -79,18 +99,18 @@ export default function Main() {
 						<h1 className="mb-4 text-1xl font-semibold text-gray-600">
 							Feel free to contact us and we'll get back right away.
 						</h1>
-						{/* <input
+						<input
 							placeholder="email@gmail.com"
 							name="email"
 							type="email"
 							autoComplete="email"
 							className="border border-gray-600 w-1/4 pr-2 pl-2 py-3 mt-2 rounded-md text-gray-600 font-semibold hover:border-gray-800"
-						></input>{" "} */}
+						></input>{" "}
 
 						<EnabledButton href="mailto:sprlab-notifications@uta.edu">Contact Us</EnabledButton>
 					</div>
 				</div>
-			</section>
+			</section> */}
 		</section>
 	);
 }
