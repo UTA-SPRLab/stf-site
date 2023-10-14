@@ -175,70 +175,6 @@ export default function Team() {
 		<div className="max-w-7.5xl mx-auto flex px-5 pb-24 flex-col items-center justify-center">
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<img src="./images/team-Sayak.jpeg" className="rounded" />
-					<div className="flex justify-center items-center p-2">
-						<a
-							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
-							href="https://linkedin.com/in/sayak-saha-roy-8682461a2/"
-							target="_blank"
-						>
-							<img src="./icons/linkedin.svg" className="w-6 linkedin" />
-						</a>
-						<a
-							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
-							href="https://github.com/sayaksr"
-							target="_blank"
-						>
-							<img src="./icons/github.svg" className="w-6 github" />
-						</a>
-						<a
-							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
-							href="https://twitter.com/SayakSahaRoy"
-							target="_blank"
-						>
-							<img src="./icons/twitter.svg" className="w-6 twitter" />
-						</a>
-						<a
-							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
-							href="https://sayaksr.com/"
-							target="_blank"
-						>
-							<img src="./icons/internet.svg" className="w-6 internet" />
-						</a>
-					</div>
-				</div>
-				<div className="md:border-l-2 md:border-t-0 md:w-0 md:h-56 border-t-2 rounded-2xl w-5/6" />
-				<div>
-					<p className="md:text-left text-xl font-semibold text-center">Sayak Saha Roy</p>
-					<p className="md:text-left text-md font-light pb-2 italic text-center">
-						Principal Investigator
-					</p>
-					<p className="md:text-left text-justify">
-						Sayak Saha Roy is a 3rd year PhD. student at the Security and Privacy
-						Research Lab at UT Arlington. His work focuses on developing novel
-						strategies towards detecting and mitigating social engineering attacks that
-						spread rapidly through online resources, as well as improving prevalent
-						educational approaches aimed towards raising user awareness towards these
-						attacks. In 2021, he discovered how vital threat intelligence shared on
-						Twitter is overlooked by several security vendors, motivating him to publish
-						his{" "}
-						<a
-							className="text-blue-500 hover:text-blue-600 transition-all italics"
-							href="https://bit.ly/41ThrWc"
-							target="_blank"
-						>
-							 findings
-						</a> at APWG eCrime, and
-						subsequently designing the Social ThreatFinder framework - an effort to make
-						such data easily accessible to end users and organizations alike. After
-						spending a summer at UC Santa Barbara, Sayak is currently focused towards
-						extending STF's coverage towards decentralised threats such as
-						cryptocurrency and NFT Scams.
-					</p>
-				</div>
-			</div>
-			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
-				<div className="w-44 shrink-0">
 					<img src="./images/team-Nilizadeh.jpg" className="rounded" />
 					<div className="flex justify-center items-center p-2">
 						<a
@@ -322,6 +258,70 @@ export default function Team() {
 						upcoming Software Engineer Intern position at JPMorgan Chase & Co. In
 						addition to academics, Ryan has founded the Association for Computing
 						Machinery (ACM) and re-founded HackUTA at his university.
+					</p>
+				</div>
+			</div>
+			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
+				<div className="w-44 shrink-0">
+					<img src="./images/team-Sayak.jpeg" className="rounded" />
+					<div className="flex justify-center items-center p-2">
+						<a
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
+							href="https://linkedin.com/in/sayak-saha-roy-8682461a2/"
+							target="_blank"
+						>
+							<img src="./icons/linkedin.svg" className="w-6 linkedin" />
+						</a>
+						<a
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
+							href="https://github.com/sayaksr"
+							target="_blank"
+						>
+							<img src="./icons/github.svg" className="w-6 github" />
+						</a>
+						<a
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
+							href="https://twitter.com/SayakSahaRoy"
+							target="_blank"
+						>
+							<img src="./icons/twitter.svg" className="w-6 twitter" />
+						</a>
+						<a
+							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
+							href="https://sayaksr.com/"
+							target="_blank"
+						>
+							<img src="./icons/internet.svg" className="w-6 internet" />
+						</a>
+					</div>
+				</div>
+				<div className="md:border-l-2 md:border-t-0 md:w-0 md:h-56 border-t-2 rounded-2xl w-5/6" />
+				<div>
+					<p className="md:text-left text-xl font-semibold text-center">Sayak Saha Roy</p>
+					<p className="md:text-left text-md font-light pb-2 italic text-center">
+						Principal Investigator
+					</p>
+					<p className="md:text-left text-justify">
+						Sayak Saha Roy is a 3rd year PhD. student at the Security and Privacy
+						Research Lab at UT Arlington. His work focuses on developing novel
+						strategies towards detecting and mitigating social engineering attacks that
+						spread rapidly through online resources, as well as improving prevalent
+						educational approaches aimed towards raising user awareness towards these
+						attacks. In 2021, he discovered how vital threat intelligence shared on
+						Twitter is overlooked by several security vendors, motivating him to publish
+						his{" "}
+						<a
+							className="text-blue-500 hover:text-blue-600 transition-all italics"
+							href="https://bit.ly/41ThrWc"
+							target="_blank"
+						>
+							 findings
+						</a> at APWG eCrime, and
+						subsequently designing the Social ThreatFinder framework - an effort to make
+						such data easily accessible to end users and organizations alike. After
+						spending a summer at UC Santa Barbara, Sayak is currently focused towards
+						extending STF's coverage towards decentralised threats such as
+						cryptocurrency and NFT Scams.
 					</p>
 				</div>
 			</div>
