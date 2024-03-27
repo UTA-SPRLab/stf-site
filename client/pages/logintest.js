@@ -36,9 +36,9 @@ export default function logintest() {
       <NextSeo
         title="Social Threat Finder Phishing DB"
         description="Phishing Database List"
-        canonical="https://socialthreatfinder.comdb"
+        canonical="http://104.200.20.157:8023/db"
         openGraph={{
-          url: "https://socialthreatfinder.comdb",
+          url: "http://104.200.20.157:8023/db",
         }}
       />
       <Head>
@@ -65,7 +65,7 @@ export default function logintest() {
                 </h1>
                 <a
                   className="btn w-32 p-1 mx-auto font-bold text-center text-blue-700 border border-blue-500 rounded-lg sm:p-2"
-                  href="https://github.com/login/oauth/authorize?client_id=9c2336c62b125da0bbd0&redirect_uri=https://socialthreatfinder.com/api/session/redirect?oauth=github"
+                  href="https://github.com/login/oauth/authorize?client_id=9c2336c62b125da0bbd0&redirect_uri=http://104.200.20.157:8024/api/session/redirect?oauth=github"
                 >
                   Sign in
                 </a>

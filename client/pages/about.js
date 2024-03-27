@@ -10,9 +10,9 @@ export default function About() {
       <NextSeo
         title="Social Threat Finder About Us"
         description="STF About Us"
-        canonical="https://socialthreatfinder.com"
+        canonical="http://104.200.20.157:8023/about"
         openGraph={{
-          url: "https://socialthreatfinder.com",
+          url: "http://104.200.20.157:8023/about",
         }}
       />
       <Head>

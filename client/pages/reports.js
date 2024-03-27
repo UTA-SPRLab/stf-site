@@ -11,9 +11,9 @@ export default function Reports() {
 			<NextSeo
 				title="Social Threat Finder Scam Reports"
 				description="Phishing Scam Report List"
-				canonical="https://socialthreatfinder.comreports"
+				canonical="http://104.200.20.157:8023/reports"
 				openGraph={{
-					url: "https://socialthreatfinder.comreports",
+					url: "http://104.200.20.157:8023/reports",
 				}}
 			/>
 			<Head>

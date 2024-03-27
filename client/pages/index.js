@@ -12,9 +12,9 @@ export default function Home() {
       <NextSeo
         title="Home: Social Threat Finder"
         description="Welcome to Social Threat Finder."
-        canonical="https://socialthreatfinder.com"
+        canonical="http://104.200.20.157:8023"
         openGraph={{
-          url: "https://socialthreatfinder.com",
+          url: "http://104.200.20.157:8023",
         }}
       />
       <Head>

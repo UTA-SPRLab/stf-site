@@ -17,9 +17,9 @@ export default function Map() {
       <NextSeo
         title="Social Threat Finder Phishing Map"
         description="Phishing map visualization"
-        canonical="https://socialthreatfinder.commap"
+        canonical="http://104.200.20.157:8023/map"
         openGraph={{
-          url: "https://socialthreatfinder.commap",
+          url: "http://104.200.20.157:8023/map",
         }}
       />
       <Head>

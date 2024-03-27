@@ -282,7 +282,7 @@ function ReportsDB() {
 	]);
 	// const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		fetch("https://socialthreatfinder.com/api/fetch/reports?start=0&amount=10000")
+		fetch("http://104.200.20.157:8024/api/fetch/reports?start=0&amount=10000")
 			.then((res) => res.json())
 			.then((res) => {
 				setPhishList(res.message);

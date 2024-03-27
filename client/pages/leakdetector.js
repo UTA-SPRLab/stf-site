@@ -10,9 +10,9 @@ export default function LeakDetectorPage() {
       <NextSeo
         title="Social Threat Finder Leak Detector"
         description="Apply for access to Social Threat Finders' Leak Detector."
-        canonical="https://socialthreatfinder.com"
+        canonical="http://104.200.20.157:8023/leakdetector"
         openGraph={{
-          url: "https://socialthreatfinder.com",
+          url: "http://104.200.20.157:8023/leakdetector",
         }}
       />
       <Head>

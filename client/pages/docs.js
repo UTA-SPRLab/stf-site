@@ -10,9 +10,9 @@ export default function Docs() {
       <NextSeo
         title="Social Threat Finder API Documentation"
         description="Documentation for the Social Threat Finder API."
-        canonical="https://socialthreatfinder.com"
+        canonical="http://104.200.20.157:8023/docs"
         openGraph={{
-          url: "https://socialthreatfinder.com",
+          url: "http://104.200.20.157:8023/docs",
         }}
       />
       <Head>

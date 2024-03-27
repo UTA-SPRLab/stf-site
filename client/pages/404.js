@@ -10,9 +10,9 @@ export default function Contact() {
       <NextSeo
         title="404: Social Threat Finder"
         description="404 page for all our missing pages"
-        canonical="https://socialthreatfinder.com404"
+        canonical="http://104.200.20.157:8023/404"
         openGraph={{
-          url: "https://socialthreatfinder.com404",
+          url: "http://104.200.20.157:8023/404",
         }}
       />
       <Head>

@@ -11,9 +11,9 @@ export default function Db() {
       <NextSeo
         title="Social Threat Finder Phishing DB"
         description="Phishing Database List"
-        canonical="https://socialthreatfinder.comdb"
+        canonical="http://104.200.20.157:8023/db"
         openGraph={{
-          url: "https://socialthreatfinder.comdb",
+          url: "http://104.200.20.157:8023/db",
         }}
       />
       <Head>
