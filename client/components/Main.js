@@ -3,7 +3,7 @@ import { DisabledButton, EnabledButton } from "./icons/Buttons";
 
 export default function Main() {
 	return (
-		<section className="text-gray-600 body-font">
+		<section className="text-gray-600 body-font flex flex-col items-center">
 			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:mt-10 md:mx-32 md:flex-row flex-col items-center">
 				<div className="lg:flex-grow lg:w-3/5 flex flex-col lg:items-start lg:text-left items-center text-center p-6">
 					<h1 className="text-7xl items-center Avenir xl:w-2/2 mb-10 md:mb-4 md:leading-16 leading-14 text-blue-500">
@@ -16,10 +16,13 @@ export default function Main() {
 					</p>
 					<div className="flex justify-center gap-5">
 						<EnabledButton href="/db">Phishing DB</EnabledButton>
+						<EnabledButton href="/leakdetector">
+							Leak Detector
+						</EnabledButton>
 						<EnabledButton href="https://forms.gle/Fz5U9E9WkYtzhuMj6">
 							Request API Key
 						</EnabledButton>
-						<DisabledButton status="(Coming Soon)">Scam Reports</DisabledButton>
+						{/* <DisabledButton status="(Coming Soon)">Scam Reports</DisabledButton> */}
 						{/* <button
 							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
 							href="map"
