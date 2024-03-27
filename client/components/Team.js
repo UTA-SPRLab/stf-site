@@ -177,7 +177,7 @@ export default function Team() {
 		<div className="max-w-7.5xl mx-auto flex px-5 pb-24 flex-col items-center justify-center">
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<Image src="./images/team-Nilizadeh.jpg" className="rounded" width={384} height={384} />
+					<Image src="/images/team-Nilizadeh.jpg" className="rounded" width={384} height={384} />
 					<div className="flex justify-center items-center p-2">
 						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
@@ -218,7 +218,7 @@ export default function Team() {
 			</div>
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<Image src="./images/team-Ryan.jpg" className="rounded" width={384} height={384} />
+					<Image src="/images/team-Ryan.jpg" className="rounded" width={384} height={384} />
 					<div className="flex justify-center items-center p-2">
 						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
@@ -265,7 +265,7 @@ export default function Team() {
 			</div>
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<Image src="./images/team-Sayak.jpeg" className="rounded" width={384} height={384} />
+					<Image src="/images/team-Sayak.jpeg" className="rounded" width={384} height={384} />
 					<div className="flex justify-center items-center p-2">
 						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"

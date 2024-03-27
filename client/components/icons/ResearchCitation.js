@@ -1,5 +1,6 @@
 import SmallButton from "./Buttons.js";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ResearchCitation({
 	id,
@@ -87,13 +88,14 @@ export default function ResearchCitation({
 					 (publisher === "NDSS") ? "NDSS" : "Publisher"
 					}
 				</Link>
-				<Link
+				<div
 					className="citeButton inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
 					id={id}
+					href=""
 					onClick={(e) => cite(e.target.id)}
 				>
 					Cite (MLA)
-				</Link>
+				</div>
 			</div>
 		</div>
 	);
