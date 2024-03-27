@@ -12,9 +12,9 @@ export default function Home() {
       <NextSeo
         title="Home: Social Threat Finder"
         description="Welcome to Social Threat Finder."
-        canonical="https://stf-site.vercel.app/"
+        canonical="https://socialthreatfinder.com"
         openGraph={{
-          url: "https://stf-site.vercel.app/",
+          url: "https://socialthreatfinder.com",
         }}
       />
       <Head>

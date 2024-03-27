@@ -219,7 +219,7 @@ function PhishDB() {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:8022/api/fetch/phish?start=0&amount=200")
+			.get("https://socialthreatfinder.com/api/fetch/phish?start=0&amount=200")
 			.then((res) => {
 				setPhishList(res.data.message);
 				// setLoading(false);

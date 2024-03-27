@@ -64,7 +64,7 @@ export default function ResearchCitation({
 			{/* <div className="md:border-l-2 md:border-t-0 md:w-0 md:h-16 border-t-2 rounded-2xl w-5/6 mx-4" /> */}
 			<div className="w-1/8 flex md:flex-col md:gap-0 gap-2 md:border-l-2 p-2">
 				<a
-					className="inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
+					className="inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
 					href={`${link}`}
 					target="_blank"
 				>
@@ -87,7 +87,7 @@ export default function ResearchCitation({
 					}
 				</a>
 				<a
-					className="citeButton inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
+					className="citeButton inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
 					id={id}
 					onClick={(e) => cite(e.target.id)}
 				>

@@ -10,9 +10,9 @@ export default function Contact() {
       <NextSeo
         title="404: Social Threat Finder"
         description="404 page for all our missing pages"
-        canonical="https://stf-site.vercel.app/404"
+        canonical="https://socialthreatfinder.com404"
         openGraph={{
-          url: "https://stf-site.vercel.app/404",
+          url: "https://socialthreatfinder.com404",
         }}
       />
       <Head>

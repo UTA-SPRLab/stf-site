@@ -2,7 +2,7 @@
 
 STF's frontend built using Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages). Designed to be built on top of the STF API.
 
-**Demo: [https://stf-site.vercel.app/](https://stf-site.vercel.app/)**
+**Demo: [https://socialthreatfinder.com](https://socialthreatfinder.com)**
 
 ## Server Setup
 

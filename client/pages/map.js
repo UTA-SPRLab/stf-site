@@ -17,9 +17,9 @@ export default function Map() {
       <NextSeo
         title="Social Threat Finder Phishing Map"
         description="Phishing map visualization"
-        canonical="https://stf-site.vercel.app/map"
+        canonical="https://socialthreatfinder.commap"
         openGraph={{
-          url: "https://stf-site.vercel.app/map",
+          url: "https://socialthreatfinder.commap",
         }}
       />
       <Head>

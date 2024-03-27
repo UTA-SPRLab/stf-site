@@ -10,9 +10,9 @@ export default function Docs() {
       <NextSeo
         title="Social Threat Finder API Documentation"
         description="Documentation for the Social Threat Finder API."
-        canonical="https://stf-site.vercel.app/"
+        canonical="https://socialthreatfinder.com"
         openGraph={{
-          url: "https://stf-site.vercel.app/",
+          url: "https://socialthreatfinder.com",
         }}
       />
       <Head>
