@@ -166,7 +166,7 @@ export function IconCell({ value, column, row }) {
 			<div className="flex-shrink-0 h-8 w-8">
 				<Image
 					className="h-8 w-8 rounded-lg"
-					src={`./icons/${String(value).toLowerCase()}.png`}
+					src={`/icons/${String(value).toLowerCase()}.png`}
 					width={32} height={32}
 					alt=""
 				/>
@@ -221,7 +221,7 @@ function PhishDB() {
 
 	useEffect(() => {
 		axios
-			.get("http://104.200.20.157:8024/api/fetch/phish?start=0&amount=200")
+			.get("http://104.200.20.157:8022/api/fetch/phish?start=0&amount=200")
 			.then((res) => {
 				setPhishList(res.data.message);
 				// setLoading(false);
