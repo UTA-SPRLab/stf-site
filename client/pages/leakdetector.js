@@ -1,15 +1,15 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import APIDocs from "../components/APIDocs";
+import LeakDetector from "../components/LeakDetector";
 import Footer from "../components/Footer";
 import { NextSeo } from "next-seo";;
 
-export default function Docs() {
+export default function LeakDetectorPage() {
   return (
     <div className="text-black">
       <NextSeo
-        title="Social Threat Finder API Documentation"
-        description="Documentation for the Social Threat Finder API."
+        title="Social Threat Finder Leak Detector"
+        description="Apply for access to Social Threat Finders' Leak Detector."
         canonical="https://socialthreatfinder.com"
         openGraph={{
           url: "https://socialthreatfinder.com",
@@ -20,7 +20,7 @@ export default function Docs() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <APIDocs />
+      <LeakDetector />
       <Footer />
       <div className="h-0 w-0 hidden selected"></ div>
     </div>

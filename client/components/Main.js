@@ -1,9 +1,11 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { DisabledButton, EnabledButton } from "./icons/Buttons";
 
 export default function Main() {
 	return (
-		<section className="text-gray-600 body-font">
+		<section className="text-gray-600 body-font flex flex-col items-center">
 			<div className="max-w-7.5xl mx-auto flex px-5 py-24 md:mt-10 md:mx-32 md:flex-row flex-col items-center">
 				<div className="lg:flex-grow lg:w-3/5 flex flex-col lg:items-start lg:text-left items-center text-center p-6">
 					<h1 className="text-7xl items-center Avenir xl:w-2/2 mb-10 md:mb-4 md:leading-16 leading-14 text-blue-500">
@@ -16,10 +18,13 @@ export default function Main() {
 					</p>
 					<div className="flex justify-center gap-5">
 						<EnabledButton href="/db">Phishing DB</EnabledButton>
+						<EnabledButton href="/leakdetector">
+							Leak Detector
+						</EnabledButton>
 						<EnabledButton href="https://forms.gle/Fz5U9E9WkYtzhuMj6">
 							Request API Key
 						</EnabledButton>
-						<DisabledButton status="(Coming Soon)">Scam Reports</DisabledButton>
+						{/* <DisabledButton status="(Coming Soon)">Scam Reports</DisabledButton> */}
 						{/* <button
 							className="inline-flex flex-col items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200" // When reintrudcing, replace with: bg-blue-500 hover:bg-blue-600
 							href="map"
@@ -31,7 +36,7 @@ export default function Main() {
 					</div>
 				</div>
 				<div className="w-2/5 hidden lg:flex">
-					<img alt="Display Mockup" src="/images/MacMockup.png"></img>
+					<Image alt="Display Mockup" src="/images/MacMockup.png" width={384} height={384}></Image>
 				</div>
 			</div>
 			<section className="mx-auto">
@@ -42,22 +47,22 @@ export default function Main() {
 							id="partners"
 						>
 							{/* Special Thanks To... */} Developed by the{" "}
-							<a
+							<Link
 								className="text-blue-500 hover:text-blue-600 transition-all"
 								href="https://sprlab.uta.edu/"
 								target="_blank"
 							>
 								Security and Privacy Research Lab
-							</a>
+							</Link>
 							<br />
 							at the{" "}
-							<a
+							<Link
 								className="text-blue-500 hover:text-blue-600 transition-all"
 								href="https://cse.uta.edu/"
 								target="_blank"
 							>
 								University of Texas at Arlington
-							</a>
+							</Link>
 						</h1>
 					</div>
 					<div className="flex justify-center items-center gap-8 mb-16 text-center">

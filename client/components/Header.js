@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Header() {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -18,14 +19,14 @@ export default function Header() {
 		>
 			<div className="flex flex-col max-w-7xl px-4 mx-auto lg:items-center lg:justify-between lg:flex-row lg:px-8">
 				<div className="flex flex-row items-center justify-between p-4 border-b border-gray-300 md:border-none">
-					<a
+					<Link
 						href="/"
 						className="text-lg font-semibold rounded-lg tracking-widest focus:outline-none focus:shadow-outline"
 					>
 						<h1 className="text-4xl Avenir tracking-tighter text-blue-500 lg:text-4x1 lg:text-3xl transition duration-150 ease-in-out hover:text-blue-600 before:content-['STF'] md:before:content-['Social_ThreatFinder']" >
 							
 						</h1>
-					</a>
+					</Link>
 					<button
 						className="text-white cursor-pointer leading-none px-3 py-1 lg:hidden outline-none focus:outline-none transition-all "
 						type="button"
@@ -59,49 +60,57 @@ export default function Header() {
 					<nav className="flex-col flex-grow">
 						<ul className="flex flex-grow flex-col md:flex-row md:justify-end justify-start items-center content-center flex-wrap my-2 sm:mb-0">
 							<li>
-								<a
+								<Link
 									href="/db"
 									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Phishing DB
-								</a>
+								</Link>
 							</li>
 							{/* <li>
-								<a
+								<Link
 									href="/map"
 									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Threat Map
-								</a>
+								</Link>
 							</li> */}
 							{/* <li>
-								<a
+								<Link
 									href="/reports"
 									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									Scam Reports
-								</a>
+								</Link>
 							</li> */}
 							<li>
-								<a
+								<Link
+									href="/leakdetector"
+									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
+								>
+									Leak Detector
+								</Link>
+							</li>
+							<li>
+								<Link
 									href="/docs"
 									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									API & Feed
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href="/about"
 									className="font-medium text-gray-600 hover:text-blue-500 px-5 py-3 flex items-center transition duration-150 ease-in-out"
 								>
 									About Us
-								</a>
+								</Link>
 							</li>
 							{/*!loggedIn*/ 1 ? (
 								<>
 									{/* <li className="mr-4">
-										<a
+										<Link
 											className="inline-flex items-center px-4 py-2 font-medium text-gray-100 transition duration-150 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 md:ml-4 bg-blue-500 hover:bg-blue-600"
 											href="/"
 										>
@@ -116,7 +125,7 @@ export default function Header() {
 													fillRule="nonzero"
 												/>
 											</svg>
-										</a>
+										</Link>
 									</li> */}
 								</>
 							) : (

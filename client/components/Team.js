@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Ryan from "../public/images/team-Ryan.jpg";
 
@@ -175,22 +177,22 @@ export default function Team() {
 		<div className="max-w-7.5xl mx-auto flex px-5 pb-24 flex-col items-center justify-center">
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<img src="./images/team-Nilizadeh.jpg" className="rounded" />
+					<Image src="/images/team-Nilizadeh.jpg" className="rounded" width={384} height={384} />
 					<div className="flex justify-center items-center p-2">
-						<a
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://twitter.com/ShirinNilizadeh"
 							target="_blank"
 						>
-							<img src="./icons/twitter.svg" className="w-6 twitter" />
-						</a>
-						<a
+							<Image src="./icons/twitter.svg" className="w-6 twitter" width={24} height={24} />
+						</Link>
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://sprlab.uta.edu/"
 							target="_blank"
 						>
-							<img src="./icons/internet.svg" className="w-6 h-6 internet" />
-						</a>
+							<Image src="./icons/internet.svg" className="w-6 h-6 internet"  width={24} height={24} />
+						</Link>
 					</div>
 				</div>
 				<div className="md:border-l-2 md:border-t-0 md:w-0 md:h-56 border-t-2 rounded-2xl w-5/6" />
@@ -216,29 +218,29 @@ export default function Team() {
 			</div>
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<img src="./images/team-Ryan.jpg" className="rounded" />
+					<Image src="/images/team-Ryan.jpg" className="rounded" width={384} height={384} />
 					<div className="flex justify-center items-center p-2">
-						<a
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://linkedin.com/in/lryanle/"
 							target="_blank"
 						>
-							<img src="./icons/linkedin.svg" className="w-6 linkedin" />
-						</a>
-						<a
+							<Image src="./icons/linkedin.svg" className="w-6 linkedin" width={32} height={32} />
+						</Link>
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://github.com/lryanle"
 							target="_blank"
 						>
-							<img src="./icons/github.svg" className="w-6 github" />
-						</a>
-						<a
+							<Image src="./icons/github.svg" className="w-6 github" width={32} height={32} />
+						</Link>
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://lryanle.com/"
 							target="_blank"
 						>
-							<img src="./icons/internet.svg" className="w-6 internet" />
-						</a>
+							<Image src="./icons/internet.svg" className="w-6 internet" width={32} height={32} />
+						</Link>
 					</div>
 				</div>
 				<div className="md:border-l-2 md:border-t-0 md:w-0 md:h-56 border-t-2 rounded-2xl w-5/6" />
@@ -263,36 +265,36 @@ export default function Team() {
 			</div>
 			<div className="border-2 rounded-2xl flex flex-nowrap md:flex-row flex-col gap-4 justify-between p-4 md:mx-16 m-2 items-center">
 				<div className="w-44 shrink-0">
-					<img src="./images/team-Sayak.jpeg" className="rounded" />
+					<Image src="/images/team-Sayak.jpeg" className="rounded" width={384} height={384} />
 					<div className="flex justify-center items-center p-2">
-						<a
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://linkedin.com/in/sayak-saha-roy-8682461a2/"
 							target="_blank"
 						>
-							<img src="./icons/linkedin.svg" className="w-6 linkedin" />
-						</a>
-						<a
+							<Image src="./icons/linkedin.svg" className="w-6 linkedin" width={24} height={24} />
+						</Link>
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://github.com/sayaksr"
 							target="_blank"
 						>
-							<img src="./icons/github.svg" className="w-6 github" />
-						</a>
-						<a
+							<Image src="./icons/github.svg" className="w-6 github" width={24} height={24} />
+						</Link>
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://twitter.com/SayakSahaRoy"
 							target="_blank"
 						>
-							<img src="./icons/twitter.svg" className="w-6 twitter" />
-						</a>
-						<a
+							<Image src="./icons/twitter.svg" className="w-6 twitter" width={24} height={24} />
+						</Link>
+						<Link
 							className="w-8 h-8 mx-1 bg-slate-100 hover:bg-slate-200 transition-all p-1 rounded flex justify-center items-center"
 							href="https://sayaksr.com/"
 							target="_blank"
 						>
-							<img src="./icons/internet.svg" className="w-6 internet" />
-						</a>
+							<Image src="./icons/internet.svg" className="w-6 internet" width={24} height={24} />
+						</Link>
 					</div>
 				</div>
 				<div className="md:border-l-2 md:border-t-0 md:w-0 md:h-56 border-t-2 rounded-2xl w-5/6" />
@@ -310,13 +312,13 @@ export default function Team() {
 						attacks. In 2021, he discovered how vital threat intelligence shared on
 						Twitter is overlooked by several security vendors, motivating him to publish
 						his{" "}
-						<a
+						<Link
 							className="text-blue-500 hover:text-blue-600 transition-all italics"
 							href="https://bit.ly/41ThrWc"
 							target="_blank"
 						>
 							 findings
-						</a> at APWG eCrime, and
+						</Link> at APWG eCrime, and
 						subsequently designing the Social ThreatFinder framework - an effort to make
 						such data easily accessible to end users and organizations alike. After
 						spending a summer at UC Santa Barbara, Sayak is currently focused towards

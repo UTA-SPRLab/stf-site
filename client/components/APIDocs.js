@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import { EnabledButton } from "./icons/Buttons";
 import hljs from "highlight.js/lib/core";
@@ -64,7 +66,7 @@ export default function APIDocs() {
 					</div>
 				</div>
 				<div className="hidden lg:flex p-6 w-1/2">
-					<img alt="API Landing" src="/images/api-landing.png"></img>
+					<Image alt="API Landing" src="/images/api-landing.png" width={384} height={384} />
 				</div>
 			</div>
 			<div className="mx-8 w-4/5 border-t lg:flex-row bg-top border-gray-300" />
@@ -89,9 +91,11 @@ export default function APIDocs() {
 							<tr className="border-b hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 text-left">
 									<div className="inline-flex items-center gap-1">
-										<img
+										<Image
 											src="/icons/user-default.png"
 											className="w-6 h-6 grayIcon"
+											width={24}
+											height={24}
 										/>
 										<p>Default</p>
 									</div>
@@ -104,9 +108,11 @@ export default function APIDocs() {
 							<tr className="border-b text-red-700 hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 leading-4 text-left mx-4">
 									<div className="inline-flex items-center gap-1">
-										<img
+										<Image
 											src="/icons/user-registered.png"
 											className="w-6 h-6 disabledIcon"
+											width={24}
+											height={24}
 										/>
 										<p>Registered</p>
 									</div>
@@ -120,22 +126,24 @@ export default function APIDocs() {
 							<tr className="hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 text-center">
 									<div className="inline-flex items-center gap-1">
-										<img
+										<Image
 											src="/icons/user-academic.png"
 											className="w-6 h-6 grayIcon"
+											width={24}
+											height={24}
 										/>
 										<p>Academic</p>
 									</div>
 								</td>
 								<td className="border-r px-4 py-1 text-center">
 									Research access by{" "}
-									<a
+									<Link
 										className="text-blue-500 hover:text-blue-600 transition-all"
 										href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
 										target="_blank"
 									>
 										application
-									</a>
+									</Link>
 								</td>
 								<td className="px-4 py-1">GET & POST</td>
 							</tr>
@@ -143,13 +151,13 @@ export default function APIDocs() {
 					</table>
 				</div>
 				<div className="w-2/5 hidden lg:flex px-5 py-24 mx-auto">
-					<img alt="API Users" src="/images/api-section-users.png"></img>
+					<Image alt="API Users" src="/images/api-section-users.png" width={384} height={384}></Image>
 				</div>
 			</section>
 			<div className="mx-8 w-4/5 border-t lg:flex-row bg-top border-gray-300" />
 			<section className="flex md:flex-row flex-col items-center justify-center md:mx-32">
 				<div className="w-2/5 hidden lg:flex px-5 py-24 mx-auto">
-					<img alt="API Users" src="/images/api-section-limits.png"></img>
+					<Image alt="API Users" src="/images/api-section-limits.png" width={384} height={384}></Image>
 				</div>
 				<div className="lg:w-3/5 flex flex-col  items-center px-5 py-8 mx-auto">
 					<h1 className="text-6xl items-center Avenir xl:w-2/2 text-blue-500 text-center">
@@ -158,13 +166,13 @@ export default function APIDocs() {
 					<p className="text-gray-600 text-lg text-justify items-center">
 						Our API limits queries and payloads based on the tier of the user. Default
 						API access is available to all users, and Academic access is available by{" "}
-						<a
+						<Link
 							className="text-blue-500 hover:text-blue-600 transition-all"
 							href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
 							target="_blank"
 						>
 							request
-						</a>
+						</Link>
 						.
 					</p>
 					<table className="mt-4 text-center">
@@ -179,9 +187,11 @@ export default function APIDocs() {
 							<tr className="border-b hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 text-left">
 									<div className="inline-flex items-center gap-1">
-										<img
+										<Image
 											src="/icons/user-default.png"
 											className="w-6 h-6 grayIcon"
+											width={384}
+											height={384}
 										/>
 										<p>Default</p>
 									</div>
@@ -192,9 +202,11 @@ export default function APIDocs() {
 							<tr className="border-b text-red-700 hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 leading-4 text-left mx-4">
 									<div className="inline-flex items-center gap-1">
-										<img
+										<Image
 											src="/icons/user-registered.png"
 											className="w-6 h-6 disabledIcon"
+											width={384}
+											height={384}
 										/>
 										<p>Registered</p>
 									</div>
@@ -206,9 +218,11 @@ export default function APIDocs() {
 							<tr className="hover:bg-gray-50">
 								<td className="border-r-2 px-4 py-1 text-center">
 									<div className="inline-flex items-center gap-1">
-										<img
+										<Image
 											src="/icons/user-academic.png"
 											className="w-6 h-6 grayIcon"
+											width={384}
+											height={384}
 										/>
 										<p>Academic</p>
 									</div>
@@ -347,13 +361,13 @@ else:
 					</div>
 				</div>
 				<div className="w-2/5 hidden lg:flex px-5 py-24 mx-auto">
-					<img alt="API Users" src="/images/api-section-use.png"></img>
+					<Image alt="API Users" src="/images/api-section-use.png" width={384} height={384} />
 				</div>
 			</section>
 			<div className="mx-8 w-4/5 border-t lg:flex-row bg-top border-gray-300" />
 			<section className="flex md:flex-row flex-col items-center justify-center md:mx-32">
 				<div className="w-2/5 hidden lg:flex px-5 py-24 mx-auto">
-					<img alt="API Users" src="/images/api-section-docs.png"></img>
+					<Image alt="API Users" src="/images/api-section-docs.png" width={384} height={384} />
 				</div>
 				<div className="lg:w-3/5 flex flex-col items-center px-5 py-8 mx-auto gap-4">
 					<h1 className="text-6xl items-center Avenir xl:w-2/2 text-blue-500 text-center">

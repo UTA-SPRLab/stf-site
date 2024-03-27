@@ -11,9 +11,9 @@ export default function Db() {
       <NextSeo
         title="Social Threat Finder Phishing DB"
         description="Phishing Database List"
-        canonical="https://stf-site.vercel.app/db"
+        canonical="https://socialthreatfinder.comdb"
         openGraph={{
-          url: "https://stf-site.vercel.app/db",
+          url: "https://socialthreatfinder.comdb",
         }}
       />
       <Head>

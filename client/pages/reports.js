@@ -11,9 +11,9 @@ export default function Reports() {
 			<NextSeo
 				title="Social Threat Finder Scam Reports"
 				description="Phishing Scam Report List"
-				canonical="https://stf-site.vercel.app/reports"
+				canonical="https://socialthreatfinder.comreports"
 				openGraph={{
-					url: "https://stf-site.vercel.app/reports",
+					url: "https://socialthreatfinder.comreports",
 				}}
 			/>
 			<Head>
