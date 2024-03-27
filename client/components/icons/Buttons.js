@@ -34,9 +34,9 @@ export function PageButton({ children, className, ...rest }) {
 export function EnabledButton({ children, href, ...rest }) {
 	return (
 		<a
-			className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-blue-500 hover:bg-blue-600"
+			className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600"
 			href={`${href}`}
-			target="_blank"
+			// target="_blank"
 			{...rest}
 		>
 			<span className="justify-center">{children}</span>
@@ -47,7 +47,7 @@ export function EnabledButton({ children, href, ...rest }) {
 export function DisabledButton({ children, status, ...rest }) {
 	return (
 		<button
-			className="inline-flex flex-col items-center px-5 py-2 mt-2 font-medium text-white transition duration-150 ease-in-out transform bg-transparent border rounded-lg bg-gray-400 hover:text-gray-200"
+			className="inline-flex flex-col items-center px-5 py-2 mt-2 font-medium text-white transition duration-150 ease-in-out transform border rounded-lg bg-gray-400 hover:text-gray-200"
 			disabled
 			{...rest}
 		>
