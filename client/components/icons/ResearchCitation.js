@@ -1,4 +1,5 @@
 import SmallButton from "./Buttons.js";
+import Image from "next/image";
 
 export default function ResearchCitation({
 	id,
@@ -56,14 +57,14 @@ export default function ResearchCitation({
 		<div className={`flex justify-between items-center w-full md:flex-row flex-col hover:bg-gray-50 hover:text-gray-800 transition-all ${pos === "top" ? "border-x-2 border-t-2 rounded-t" : (pos === "bottom" ? "border-x-2 border-b-2 rounded-b" : "border-2")}`}>
 			<p className="citationText w-7/8 py-2 px-4 text-justify md:text-left" id={id}>
 				{authors}. "
-				<a href={`${link}`} target="_blank">
+				<Link href={`${link}`} target="_blank">
 					{title}
-				</a>
+				</Link>
 				." <i>{journal}</i>. {publisher}, {year}.
 			</p>
 			{/* <div className="md:border-l-2 md:border-t-0 md:w-0 md:h-16 border-t-2 rounded-2xl w-5/6 mx-4" /> */}
 			<div className="w-1/8 flex md:flex-col md:gap-0 gap-2 md:border-l-2 p-2">
-				<a
+				<Link
 					className="inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
 					href={`${link}`}
 					target="_blank"
@@ -85,14 +86,14 @@ export default function ResearchCitation({
 					 (publisher === "IOP Publishing") ? "IOPscience" : 
 					 (publisher === "NDSS") ? "NDSS" : "Publisher"
 					}
-				</a>
-				<a
+				</Link>
+				<Link
 					className="citeButton inline-flex justify-center items-center px-2 py-1 font-medium text-white transition-all duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600 w-28 text-center cursor-pointer"
 					id={id}
 					onClick={(e) => cite(e.target.id)}
 				>
 					Cite (MLA)
-				</a>
+				</Link>
 			</div>
 		</div>
 	);

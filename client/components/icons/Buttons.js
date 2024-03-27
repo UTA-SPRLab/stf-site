@@ -1,5 +1,6 @@
 import React from "react";
 import { classNames } from "./Utils";
+import Link from "next/link";
 
 export function Button({ children, className, ...rest }) {
 	return (
@@ -33,14 +34,14 @@ export function PageButton({ children, className, ...rest }) {
 
 export function EnabledButton({ children, href, ...rest }) {
 	return (
-		<a
+		<Link
 			className="inline-flex items-center px-5 py-3 mt-2 font-medium text-white transition duration-150 ease-in-out transform border rounded-lg bg-blue-500 hover:bg-blue-600"
 			href={`${href}`}
 			// target="_blank"
 			{...rest}
 		>
 			<span className="justify-center">{children}</span>
-		</a>
+		</Link>
 	);
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import Team from "./Team";
 import ResearchCitation from "./icons/ResearchCitation";
 import ReturnHome from "./icons/ReturnHome";
+import Link from "next/link";
 
 export default function AboutUs() {
 	return (
@@ -24,13 +25,13 @@ export default function AboutUs() {
 						<br />
 						Our blocklist is updated in real-time, which can be accessed through this
 						website, or you can also sign up for our API{" "}
-						<a
+						<Link
 							className="text-blue-500 hover:text-blue-600 transition-all"
 							href="https://forms.gle/Fz5U9E9WkYtzhuMj6"
 							target="_blank"
 						>
 							here
-						</a>
+						</Link>
 						.
 					</p>
 				</div>

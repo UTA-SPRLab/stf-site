@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "regenerator-runtime";
@@ -148,19 +150,20 @@ export function IconCell({ value, column, row }) {
 	};
 
 	return (
-		<a className="flex items-center" target="_blank" href={`${row.original.report_url}`}>
+		<Link className="flex items-center" target="_blank" href={`${row.original.report_url}`}>
 			<div className="flex flex-shrink-0 justify-center h-36 w-64">
-				<img
+				<Image
 					className="h-full rounded-lg border"
 					src={
 						(!String(value).toLowerCase().includes("none") && checkUrl(value))
 							? value
 							: `./images/imagenotfound.png`
 					}
+					width={384} height={384}
 					alt=""
 				/>
 			</div>
-		</a>
+		</Link>
 	);
 }
 
@@ -229,8 +232,9 @@ export function BodyCell({ value, column, row }) {
 			</div>
 			<div className="flex flex-row flex-nowrap justify-between items-end hidden"> {/* GET BACK TO THIS ASAP */}
 				<div className="flex items-center gap-2">
-					<img
+					<Image
 						className="h-8 w-8 rounded-lg"
+						width={32} height={32}
 						src={
 							row.original.report_source != "none"
 								? `./icons/${String(row.original.report_source).toLowerCase()}.png`
@@ -238,12 +242,12 @@ export function BodyCell({ value, column, row }) {
 						}
 					/>
 					<div className="flex flex-wrap flex-col flex-1">
-						<a
+						<Link
 							href={`https://twitter.com/${String(row.original.report_user_name)}`}
 							target="_blank"
 						>
 							{String(row.original.report_user_name)}
-						</a>
+						</Link>
 						<div className="text-gray-400 text-sm">{formattedDate}</div>
 					</div>
 				</div>

@@ -1,51 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import Image from "next/image";
 import { EnabledButton } from "./icons/Buttons";
-import hljs from "highlight.js/lib/core";
 
-import javascript from "highlight.js/lib/languages/javascript";
-import bash from "highlight.js/lib/languages/bash";
-import python from "highlight.js/lib/languages/python";
-import json from "highlight.js/lib/languages/json";
-hljs.registerLanguage("javascript", javascript);
-hljs.registerLanguage("bash", bash);
-hljs.registerLanguage("python", python);
-hljs.registerLanguage("json", json);
-
-export default function APIDocs() {
-	useEffect(() => {
-		hljs.initHighlighting();
-	});
-
-	const sectionSelect = (id, btn) => {
-		const element = document.getElementById(id);
-		const elements = document.getElementsByClassName("codeSelection");
-
-		for (let i = 0; i < elements.length; i++) {
-			if (element === elements.item(i)) {
-				elements.item(i).classList.remove("hidden");
-				continue;
-			}
-			elements.item(i).classList.add("hidden");
-		}
-
-		const button = document.getElementById(btn);
-		const buttons = document.getElementsByClassName("btnSelection");
-		console.log(button);
-		for (let i = 0; i < buttons.length; i++) {
-			if (button === buttons.item(i)) {
-				buttons.item(i).classList.remove("notSelected");
-				buttons.item(i).classList.add("selected");
-				continue;
-			}
-			buttons.item(i).classList.add("notSelected");
-			buttons.item(i).classList.remove("selected");
-		}
-
-		// element.scrollIntoView({ behavior: "smooth" });
-	};
+export default function LeakDetector() {
 
 	return (
 		<section className="text-gray-600 body-font flex flex-col justify-center items-center">

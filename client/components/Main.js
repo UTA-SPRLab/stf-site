@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { DisabledButton, EnabledButton } from "./icons/Buttons";
 
 export default function Main() {
@@ -34,7 +36,7 @@ export default function Main() {
 					</div>
 				</div>
 				<div className="w-2/5 hidden lg:flex">
-					<img alt="Display Mockup" src="/images/MacMockup.png"></img>
+					<Image alt="Display Mockup" src="/images/MacMockup.png" width={384} height={384}></Image>
 				</div>
 			</div>
 			<section className="mx-auto">
@@ -45,22 +47,22 @@ export default function Main() {
 							id="partners"
 						>
 							{/* Special Thanks To... */} Developed by the{" "}
-							<a
+							<Link
 								className="text-blue-500 hover:text-blue-600 transition-all"
 								href="https://sprlab.uta.edu/"
 								target="_blank"
 							>
 								Security and Privacy Research Lab
-							</a>
+							</Link>
 							<br />
 							at the{" "}
-							<a
+							<Link
 								className="text-blue-500 hover:text-blue-600 transition-all"
 								href="https://cse.uta.edu/"
 								target="_blank"
 							>
 								University of Texas at Arlington
-							</a>
+							</Link>
 						</h1>
 					</div>
 					<div className="flex justify-center items-center gap-8 mb-16 text-center">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import axios from "axios";
 import "regenerator-runtime";
 import { toast } from "react-toastify";
@@ -163,9 +164,10 @@ export function IconCell({ value, column, row }) {
 	return (
 		<div className="flex items-center">
 			<div className="flex-shrink-0 h-8 w-8">
-				<img
+				<Image
 					className="h-8 w-8 rounded-lg"
 					src={`./icons/${String(value).toLowerCase()}.png`}
+					width={32} height={32}
 					alt=""
 				/>
 			</div>
